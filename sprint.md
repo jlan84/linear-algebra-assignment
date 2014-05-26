@@ -83,7 +83,7 @@ Scalar Operations
           -2
            0
 
-2. Given: [2] (scalar matrix)
+2. Given: [4,5,6] (scalar matrix)
 
           0.5
           -2
