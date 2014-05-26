@@ -1,17 +1,43 @@
 Linear Algebra
 ====================================
 
+1. What is Linear Algebra?
+2. Matrices vs Vectors/Notation
+3. Scalar Operations
+4. Elementwise Operations
+5. Matrix Multiplication
+6. Identity Matrix
+8. Inverse/Determinant
+9. Rank
 
-1. Matrices vs Vectors/Notation
-2. Scalar Operations
-3. Elementwise Operations
-4. Matrix Multiplication
-5. Identity Matrix
-6. Inverse/Determinant
-7. Rank
+
+What is Linear Algebra?
+==============================
+
+Linear algebra is about being able to solve systems of equations in an efficient manner.
+
+Let's start with a basic example of an equation:
+
+4  x1   - 5x2 = -13
+
+-2 x1 +    3x2  = 9
 
 
+If we think of Ax = b
 
+Let's change this to matrices:
+
+A = 
+
+4  -5    
+-2  3
+
+b = 
+
+-13 
+9
+
+Solving this by hand can take a long time. With matrices, there are a lot of established rules of math that come in to play that allows us to do computations efficiently.
 
 
 Matrices vs Vectors
@@ -78,22 +104,19 @@ A scalar matrix is a 1 x 1 matrix that can then typically be blended with any ma
 A quick example:
 
 
-[ 
-[ 2 3 5 ]      
-[ 4 5 6 ]                
+  2 3 5       
+  4 5 6              
 
-]
-
-+ [1] 
++ 1 
 
 = 
 
 
-[ 
-[ 3 4 6 ]      
-[ 5 6 7 ]                
 
-]
+  3 4 6       
+  5 6 7                 
+
+
 
 
 For all intents and purposes a matrix A, scalar matrix B, and scalar x where x is the only element in the 
@@ -168,10 +191,16 @@ Of note here is that x is a column vector and y is a row vector.
 
 
 
+Matrix - Matrix multiply
+====================================
+
 A matrix multiply is as follows:
 
 
 ![alt text](https://raw.githubusercontent.com/zipfian/linear-regression/master/images/matrixmultiply.png?token=1144306__eyJzY29wZSI6IlJhd0Jsb2I6emlwZmlhbi9saW5lYXItcmVncmVzc2lvbi9tYXN0ZXIvaW1hZ2VzL21hdHJpeG11bHRpcGx5LnBuZyIsImV4cGlyZXMiOjE0MDE1ODY3NDN9--fff76efaa12f548caf71d26e5fa0e51dab69b50a "Matrix Multiply")
+
+
+
 
 A readable version of this: for each i,j in your matrix that will be the number of columns in the first x number of rows in the second, Multiply the row of the first matrix by the column of the second and sum over all the results to form an individual cell where the current row or column is i,j.
 
