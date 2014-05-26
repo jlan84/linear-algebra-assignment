@@ -56,9 +56,9 @@ Matrix Vs Vectors
 If we remember right, vectors are just 1d matrices.
 
 
-1. Create a row vector with numpy
-2. Create a column vector with numpy
-3. Create a scalar vector
+1. Create a row vector with numpy ( 1 x some m)
+2. Create a column vector with numpy (some n x 1)
+3. Create a scalar vector ( 1 x 1)
 4. Create a square matrix with a dim of 6
 5. Create a random 2 x 3 matrix and a random 3 x 2 matrix
 6. Create an 6 x 6 identity matrix
@@ -102,7 +102,7 @@ Matrix Vector Multiplication
 
 1. Create a random column vector,row vector,and 3 x 3 square matrix called column_vector and row_vector, and rand_matrix respectively.
 
-2. Perform a vector vector multiply on column_vector, row_vector
+2. Perform a vector vector multiply on column_vector, row_vector. This should output a n x m matrix relative to the number of rows and columns in row_vector and column_vector. Say column_vector is a 2 x 1 and row_vector is a 1 x 3, output will be a 2 x 3 matrix.
 
 3. For each of column_vector,row_vector multiply each by rand_matrix
 4. Compute the dot product of row_vector and column_vector
@@ -117,15 +117,15 @@ Matrix Matrix Multiplication
 
 1. Create a random 3 x 6 matrix as rand_matrix.
 2. Using rand_matrix matrix multiply rand_matrix and rand_matrix transpose
-3. Reshape rand_matrix (create a copy) and matrix multiply its inverse
+3. Reshape rand_matrix (create a copy) and matrix multiply it by the original. This should be a 3 x 3.
 4. Implement matrix multiply given 2 2 dimensional lists of numbers. Test it out with a 6x2 matrix and a 2 x 6. 
 
 Elementwise Matrix Operations
 ========================================
 
 1. Create 2 random 6 x 2 matrices as rand_matrix,rand_matrix_2
-2. Square rand_matrix
-3. Add,subtract,multiply,divide rand_matrix and rand_matrix_2
+2. Square rand_matrix (this will be the same shape)
+3. Add,subtract,multiply,divide rand_matrix and rand_matrix_2 (This will be the same shape)
 4. Implement element wise multiply given 2 2d lists
 5. Implement dot product given 2 2d lists
 
@@ -139,9 +139,9 @@ Axis wise operations and operations across different dimensional matrices
 
 1. Create a 4 x 1 random matrix as rand_matrix
 2. Create a 1 x 3 random matrix as rand_matrix_2
-3. Add the 2 (yes this is possible!) using new axis
+3. Add the 2 (yes this is possible!) using new axis (this will be a 4 x 3)
 4. Create a random 2 x 3 matrix as rand_matrix
-5. Calculate the column and row wise sums,mean and standard deviation of the matrix
+5. Calculate the column and row wise sums,mean and standard deviation of the matrix. 
 6. Multiply column 1 ( 0 based indices!) of rand_matrix by 2
 
 
@@ -151,7 +151,7 @@ Rank
 ======================================
 1. Create a random 3 x 3 matrix as rand_matrix
 2. Add a column to the matrix to make it a 3 x 4 populating it with 2 * the first column
-3. Calculate the rank of the matrix
+3. Calculate the rank of the matrix. This should be a number.
 
 
 Extra Credit (> 2 dimensional data, yes this is used! Look in to tensors) 
