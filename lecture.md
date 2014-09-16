@@ -18,37 +18,30 @@ Linear algebra is about being able to solve systems of equations in an efficient
 
 Let's start with a basic example of an equation:
 
-4  x1   - 5x2 = -13
+   4 x 1 - 5 x 2 = -13
+   
+   -2 x 1 + 3 x 2 = 9
 
--2 x1 +    3x2  = 9
 
-
-If we think of Ax = b
+If we think of `Ax = b`
 
 Let's change this to matrices:
 
-A = 
-
-4  -5    
--2  3
-
-b = 
-
--13 
-9
+   A =  4 -5    
+       -2  3
+   
+   b = -13 
+         9
 
 Solving this by hand can take a long time. With matrices, there are a lot of established rules of math that come in to play that allows us to do computations efficiently.
 
 
 Matrices vs Vectors
 =====================================
-
-
 Matrices are a 2d brick of numbers. Vectors are a 1d matrix.
 
 Here is an example matrix
 ![alt text](https://raw.githubusercontent.com/zipfian/linear-regression/master/images/matrix.jpg?token=1144306__eyJzY29wZSI6IlJhd0Jsb2I6emlwZmlhbi9saW5lYXItcmVncmVzc2lvbi9tYXN0ZXIvaW1hZ2VzL21hdHJpeC5qcGciLCJleHBpcmVzIjoxNDAxNTgzODY1fQ%3D%3D--4e9ba8abe5faeb2c51f35daa12860bc58e1b0f02 "Matrix")
-
 
 2 kinds of vectors, row and column. A row vector is a 1 x n vector where n is the number of columns. A column vector is an m x 1 vector where m is the number of rows. They are transposes of each other (review of that coming up).
 
@@ -56,41 +49,31 @@ Pictured below:
 ![alt text](
 https://raw.githubusercontent.com/zipfian/linear-regression/master/images/vector.jpg?token=1144306__eyJzY29wZSI6IlJhd0Jsb2I6emlwZmlhbi9saW5lYXItcmVncmVzc2lvbi9tYXN0ZXIvaW1hZ2VzL3ZlY3Rvci5qcGciLCJleHBpcmVzIjoxNDAxNTg0MDkxfQ%3D%3D--b8918e8202cabbf3aa8f630b420f21e23e9c8844 "Vector")
 
-
 We can think of matrices and vectors as numerical primitives very similar to scalars (single numbers)
 
 With that being the case, we can do various operations on them. 
 
 The core idea of matrices and vectors is the ability to run numerical routines on large swathes of numbers at once in a fast fashion. This includes being able to operate on several blocks at once in parallel.
 
+A bit of notation: `A^T` (or `A'`) is `A` trasnpose. This flips the columns and rows of the matrix. A quick example:
 
-
-A bit of notation: A^T is A trasnpose. This flips the columns and rows of the matrix. A quick example:
-
-A =
-
-   0.12974   0.89463   0.63577   0.53814
+   A = 0.12974   0.89463   0.63577   0.53814
+      
+       0.17083   0.10324   0.25069   0.90543
+      
+       0.30377   0.70167   0.48267   0.35946
    
-   0.17083   0.10324   0.25069   0.90543
    
-   0.30377   0.70167   0.48267   0.35946
-
-
-A' =
-
-   0.12974   0.17083   0.30377
-   
-   0.89463   0.10324   0.70167
-   
-   0.63577   0.25069   0.48267
-   
-   0.53814   0.90543   0.35946
-
-
+   A' = 0.12974   0.17083   0.30377
+      
+        0.89463   0.10324   0.70167
+      
+        0.63577   0.25069   0.48267
+      
+        0.53814   0.90543   0.35946
 
 Scalar Operations
 ==================================
-
 Matrices can actually have a  number applied element wise to each. This is called a scalar operation.
 
 In python and other languages, a scalar (again: single number) is typically represented as a scalar matrix.
