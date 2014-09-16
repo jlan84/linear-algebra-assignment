@@ -36,9 +36,9 @@ If we remember right, vectors are just 1d matrices.
 
 Use numpy to complete the following tasks.
 
-1. Create a row vector with numpy ( 1 x some m)
+1. Create a row vector with numpy (1 x some m)
 2. Create a column vector with numpy (some n x 1)
-3. Create a scalar vector ( 1 x 1)
+3. Create a scalar vector (1 x 1)
 4. Create a square matrix with a dim of 6
 5. Create a random 2 x 3 matrix and a random 3 x 2 matrix
 6. Create an 6 x 6 identity matrix
