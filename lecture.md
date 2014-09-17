@@ -421,6 +421,24 @@ array([[ 1.,  0.,  0.],
 ```
 
 
+## Axis wise operations
+
+Numpy has max, min, mean and other aggregate functions. You can get these values over the whole matrix, or per row or per column.
+
+We'll work with this example matrix:
+
+```python
+In [119]: A = np.array([[7, 6, 5], [0, 2, 1]])
+```
+
+Aggregates over the whole matrix:
+
+```python
+In [120]: A.max()
+Out[120]: 7
+
+
+
 ## Rank
 
 Rank is about finding dependent rows and columns in a matrix. A dependent row (or column) is a a row (or column) that is a linear combination of other rows (or columns).
@@ -457,6 +475,8 @@ An inverse of a matrix is defined as follows:
 A matrix that has an inverse is called invertible.
 
 In order for a square matrix `A` to have an inverse `A^−1`, then `A` must be full rank (no dependent columns).
+
+Numpy has a `inv` function ([documentation](http://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.inv.html)).
 
 
 # Feature Matrix
