@@ -1,8 +1,8 @@
 Linear Algebra
 ====================================
 
-1. [What is Linear Algebra?](#what-is-linear-algebra?)
-1. [Matrices and Vectors](#matrics-and-vectors)
+1. [What is Linear Algebra?](#what-is-linear-algebra)
+1. [Matrices and Vectors](#matrices-and-vectors)
 1. [Dimensions](#dimensions)
 1. [Transpose](#transpose)
 1. [Indexing in numpy](#indexing-in-numpy)
@@ -13,6 +13,10 @@ Linear Algebra
 1. [Identity Matrix](#identity-matrix)
 1. [Rank](#rank)
 1. [Inverse](#inverse)
+2. [Feature Matrix](#feature-matrix)
+3. [Regression / Ordinary Least Squares (OLS)(#regression--ordinary-least-squares-ols)
+1. [Normal Equation](#normal-equation)
+1. [Statsmodels](#statsmodels)
 
 
 What is Linear Algebra?
@@ -536,26 +540,26 @@ Mathematically, this can be written as follows. Here beta is our b (the coeffici
 
 The *residuals* (errors)
 
-![residuals](residuals.png)
+![residuals](images/residuals.png)
 
 The sum of squared residuals:
 
-![sum squared error](sum_squared_error.png)
+![sum squared error](images/sum_squared_error.png)
 
 Simplified:
 
-![sum squared error](sum_sqaured_error2.png)
-![sum squared error](sum_sqaured_error3.png)
+![sum squared error](images/sum_sqaured_error2.png)
+![sum squared error](images/sum_sqaured_error3.png)
 
 To find the coefficients where the error is minimized, we take the derivative and set it to 0.
 
-![derivative of sum squared error](derivative_sse.png)
-![derivative of sum squared error](derivative_sse2.png)
-![derivative of sum squared error](derivative_sse3.png)
+![derivative of sum squared error](images/derivative_sse.png)
+![derivative of sum squared error](images/derivative_sse2.png)
+![derivative of sum squared error](images/derivative_sse3.png)
 
 Now we can solve for the coefficients and this gives us the normal equation:
 
-![normal equation](normal_equation.png)
+![normal equation](images/normal_equation.png)
 
 
 Statsmodels
