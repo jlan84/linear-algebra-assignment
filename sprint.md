@@ -60,10 +60,9 @@ Matrix Vector Multiplication
 ============================================
 1. Create a random length 3 column vector, length 3 row vector, and 3 x 3 square matrix called `column_vector`, `row_vector`, and `rand_matrix`, respectively.
 2. Perform a vector vector multiply on `column_vector` and `row_vector`. This should output a `n x m` matrix where `n` is the number of rows in `row_vector` and `m` is the number of columns in `column_vector`. Say `column_vector` is a 2 x 1 and `row_vector` is a 1 x 3, output will be a 2 x 3 matrix.
-3. For both `column_vector` and `row_vector`, multiply by `rand_matrix`.
+3. For both `column_vector` and `row_vector`, multiply by `rand_matrix`. One will have to go on the left and one will have to go on the right.
 4. Compute the dot product of `row_vector` and `column_vector`.
-5. Multiply each row of the `rand_matrix` by `row_vector`.
-6. If A is a 3 x 2 and B is a 4 x 3, can you matrix multiply them (AB)? If so, what is the shape? Can you matrix multiply them in the other direction (BA)? If so, what's the shape of that?
+5. If A is a 3 x 2 and B is a 4 x 3, can you matrix multiply them (AB)? If so, what is the shape? Can you matrix multiply them in the other direction (BA)? If so, what's the shape of that?
 
 
 Matrix Matrix Multiplication
