@@ -145,25 +145,14 @@ Symbolically, this looks like the following:
 
 Let's do a quick example:
 
-A = [1, 2]
-    [3, 4]
-
-B = [9, 7]
-    [5, 8]
-
-
-AB = 
-
-   1.02566   0.62256
-   
-   0.32328   0.16511
-
-
-A .* B = 
-
-   0.669134   0.254082
-   
-   0.114515   0.083497
+     A = [1, 2]
+         [3, 4]
+    
+     B = [9, 7]
+         [5, 8]
+    
+    AB = [19, 23]
+         [47, 53]
 
 #### Numpy gotcha
 `A * B` is the *elementwise* multiplication:
