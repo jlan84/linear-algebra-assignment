@@ -117,7 +117,7 @@ Different from element wise matrix multiplication, a matrix matrix multiply can 
 
 Let's identify suboperations of a matrix multiply. This can help contextualize the general case.
 
-# Inner Product (aka Dot Product)
+## Inner Product (aka Dot Product)
 An Inner product, or dot product is as follows:
 
 ![alt text](images/dotproduct.png "Dot Product")
@@ -125,13 +125,13 @@ An Inner product, or dot product is as follows:
 Of note here is that x is a row vector and y is a column vector.
 
 
-# Outer product
+## Outer product
 ![alt text](images/outerproduct.png "Outer product")
 
 Of note here is that x is a column vector and y is a row vector.
 
 
-# Matrix - Matrix multiply
+## Matrix - Matrix multiply
 A matrix multiply is as follows:
 
 ![alt text](images/matrixmultiply.png "Matrix Multiply")
