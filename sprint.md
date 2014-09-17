@@ -99,11 +99,12 @@ Rank
 
 Extra Credit 1:
 ===========================
+These are to practice linear algebra and programming. You shouldn't use any numpy magic and you *should* (gasp!) use for loops in your solutions. You should write a function for each of these.
+
 1. Implement matrix multiply given two 2-dimensional lists of numbers. Test it out with a 6 x 3 matrix and a 3 x 5 matrix. 
-2. Implement transpose without using the numpy method. Can you do it without using a loop?
+2. Implement transpose without using the numpy method.
 3. Implement the reshape function.
 4. Implement elementwise multiply given 2 2d lists.
-5. Implement dot product given 2 2d lists.
 
 
 Extra Credit (> 2 dimensional data, yes this is used! Look into tensors) 
