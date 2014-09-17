@@ -41,12 +41,12 @@ Matrices vs Vectors
 Matrices are a 2d brick of numbers. Vectors are a 1d matrix.
 
 Here is an example matrix
-![alt text](images/matrix.png "Matrix")
+![alt text](images/matrix.jpg "Matrix")
 
 2 kinds of vectors, row and column. A row vector is a 1 x n vector where n is the number of columns. A column vector is an m x 1 vector where m is the number of rows. They are transposes of each other (review of that coming up).
 
 Pictured below:
-![alt text](images/vector.png "Vector")
+![alt text](images/vector.jpg "Vector")
 
 We can think of matrices and vectors as numerical primitives very similar to scalars (single numbers)
 
