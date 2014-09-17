@@ -491,7 +491,7 @@ There is a numpy function called `matrix_rank` ([documentation](http://docs.scip
 
 ## Inverse
 
-An inverse of a matrix is defined as follows:
+An inverse of a matrix `A` is defined as follows, where `I` is the identity matrix:
 
     A^−1 A = I = A A^−1
 
