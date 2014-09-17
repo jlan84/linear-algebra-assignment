@@ -2,13 +2,17 @@ Linear Algebra
 ====================================
 
 1. [What is Linear Algebra?](#what-is-linear-algebra?)
-2. [Matrices vs Vectors (Notation)](#matrics-vs-vectors)
-3. [Scalar Operations](#scalar-operations)
-4. [Elementwise Operations](#elementwise-operations)
-5. [Matrix Multiplication](#matrix-multiplication)
-6. [Identity Matrix](#identity-matrix)
-7. [Inverse/Determinant](#inverse/determinant)
-8. [Rank](#rank)
+1. [Matrices and Vectors](#matrics-and-vectors)
+1. [Dimensions](#dimensions)
+1. [Transpose](#transpose)
+1. [Indexing in numpy](#indexing-in-numpy)
+1. [Modifying numpy vectors and matricies](#modifying-numpy-vectors-and-matricies)
+1. [Scalar Operations](#scalar-operations)
+1. [Elementwise Operations](#elementwise-operations)
+1. [Matrix Multiplication](#matrix-multiplication)
+1. [Identity Matrix](#identity-matrix)
+1. [Rank](#rank)
+1. [Inverse](#inverse)
 
 
 What is Linear Algebra?
@@ -18,25 +22,28 @@ Linear algebra is about being able to solve systems of equations in an efficient
 
 Let's start with a basic example of an equation:
 
-    4 x 1 - 5 x 2 = -13
-   
-    -2 x 1 + 3 x 2 = 9
+     4y - 5z = -13
+    -2y + 3z = 9
 
+What values of `y` and `z` satisfy this equation?
 
-If we think of `Ax = b`
+To rewrite the equation, we can put the values into matrices:
 
-Let's change this to matrices:
-
-    A =  4 -5    
+    X =  4 -5    
         -2  3
    
-    b = -13
-    9
+    y = -13
+          9
+
+    b =  y
+         z
+    
+Now the equation can be written as `Xb = y`.
 
 Solving this by hand can take a long time. With matrices, there are a lot of established rules of math that come in to play that allows us to do computations efficiently.
 
 
-Matrices vs Vectors
+Matrices and Vectors
 =====================================
 Matrices are a 2d brick of numbers. Vectors are a 1d matrix.
 
@@ -48,58 +55,245 @@ Here is an example matrix
 Pictured below:
 ![alt text](images/vector.jpg "Vector")
 
-We can think of matrices and vectors as numerical primitives very similar to scalars (single numbers)
+In numpy, we can create matrices and vectors as follows:
 
-With that being the case, we can do various operations on them. 
+```python
+import numpy as np
 
-The core idea of matrices and vectors is the ability to run numerical routines on large swathes of numbers at once in a fast fashion. This includes being able to operate on several blocks at once in parallel.
+mat = np.array([[4, -5], [-2, 3]])
+vect = np.array([-13, 9])
+column_vect = np.array([[13], [9]])
+```
 
-A bit of notation: `A^T` (or `A'`) is `A` trasnpose. This flips the columns and rows of the matrix. A quick example:
+You can also initialize a numpy arrow with all zeros or all ones:
+```python
+In [1]: np.ones((2, 4))
+Out[1]:
+array([[ 1.,  1.,  1.,  1.],
+       [ 1.,  1.,  1.,  1.]])
 
-    A =   6  10   9   7
-         11   1   3   8
-          2  -3   5  -5
+In [2]: np.zeros((3, 2))
+Out[2]:
+array([[ 0.,  0.],
+       [ 0.,  0.],
+       [ 0.,  0.]])
+```
 
-    A' =  6  11   2
-         10   1  -3
-          9   3   5
-          7   8  -5
+
+Dimensions
+=====================================
+The dimensions of a matrix are generally written as rows x columns. In numpy, we can get the dimensions of a matrix using `shape`.
+
+```python
+In [1]: A = np.array([[2, 3, 5], [4, 5, 6]])
+
+In [2]: A.shape
+Out[2]: (2, 3)
+
+In [3]: np.shape(A)
+Out[3]: (2, 3)
+```
+
+Note that there is both a `shape` function and a `shape` method. You can use either.
+
+
+Transpose
+=====================================
+`A^T` (or `A'`) is `A` transpose. This flips the columns and rows of the matrix. A quick example:
+
+    A =   6  10   9
+         11   1   3
+
+    A' =  6  11
+         10   1
+          9   3
+
+In numpy:
+
+```python
+In [1]: A = np.array([[6, 10, 9], [11, 1, 3]])
+
+In [2]: A.transpose()
+Out[2]:
+array([[ 6, 11],
+       [10,  1],
+       [ 9,  3]])
+
+In [3]: A.T
+Out[3]:
+array([[ 6, 11],
+       [10,  1],
+       [ 9,  3]])
+```
+
+Note that there is both a `transpose` method and a instance variable `T`. The main difference is that if you use `A.T` and then modify the result, you will also be modifying `A`.
+
+If you want to convert a vector to a column vector, just taking the transpose will not work because it is a vector. You can do this using `reshape`:
+
+```python
+In [1]: v = np.array([2, 3, 4])
+
+In [2]: v.reshape((3, 1))
+Out[2]:
+array([[2],
+       [3],
+       [4]])
+```
+
+You can also make a vector into a row vector:
+```python
+In [3]: v.reshape((1, 3))
+Out[3]: array([[2, 3, 4]])
+```
+
+Note that I used the `reshape` method. There is also a `reshape` function and it doesn't matter which you use:
+
+```python
+In [4]: np.reshape(v, (3, 1))
+Out[4]:
+array([[2],
+       [3],
+       [4]])
+```
+
+
+Indexing in numpy
+==================================
+Let's go through the syntax for getting specific values, rows or columns from a numpy array.
+
+For our examples, we'll be using the following vector and matrix:
+
+```python
+In [1]: v = np.array([6, 8, 2, 5, 1])
+
+In [2]: A = np.array([[3, 7, 2, 5], [9, 8, 1, 6], [2, 4, 6, 3]])
+
+In [3]: A
+Out[3]:
+array([[3, 7, 2, 5],
+       [9, 8, 1, 6],
+       [2, 4, 6, 3]])
+```
+
+To get a single entry:
+
+```python
+In [4]: v[3]
+Out[4]: 5
+
+In [5]: A[1,2]
+Out[5]: 1
+
+In [6]: A[1][2]    # equivalent to above
+Out[6]: 1
+```
+
+To get a row or column from a matrix:
+
+```python
+In [7]: A[1]    # row
+Out[7]: array([9, 8, 1, 6])
+
+In [8]: A[:,1]    # column
+Out[8]: array([7, 8, 4])
+```
+
+To slice:
+
+```python
+In [9]: v[1:4]
+Out[9]: array([8, 2, 5])
+
+In [10]: A[0:2,1:3]
+Out[10]:
+array([[7, 2],
+       [8, 1]])
+```
+
+
+Modifying numpy vectors and matricies
+==================================
+Numpy arrays can't change size or dimensions, but you can modify their values.
+
+```python
+In [11]: A
+Out[11]:
+array([[3, 7, 2, 5],
+       [9, 8, 1, 6],
+       [2, 4, 6, 3]])
+
+In [12]: A[1,0] = 10
+
+In [13]: A
+Out[13]:
+array([[ 3,   7,   2,   5],
+       [10,   8,   1,   6],
+       [ 2,   4,   6,   3]])
+```
+
+You can modify any slice. You can fill it in with a scalar.
+
+```python
+In [14]: A[0:2,1:3] = 22
+
+In [15]: A
+Out[15]:
+array([[ 3, 22, 22,  5],
+       [10, 22, 22,  6],
+       [ 2,  4,  6,  3]])
+```
+
+Or you can fill it in with another array of the appropriate size.
+
+```python
+In [16]: A[:,2] = np.array([11, 12, 13])
+
+In [17]: A
+Out[17]:
+array([[ 3, 22, 11,  5],
+       [10, 22, 12,  6],
+       [ 2,  4, 13,  3]])
+```
+
+If you want to double a row:
+
+```python
+In [18]: A[2] = A[2] * 2
+
+In [18]: A
+Out[18]:
+array([[ 3, 22, 11,  5],
+       [10, 22, 12,  6],
+       [ 8, 16, 52, 12]])
+```
 
 
 Scalar Operations
 ==================================
-Matrices can actually have a  number applied element wise to each. This is called a scalar operation.
+Matrices can actually have a number applied elementwise to each. This is called a scalar operation.
 
-In python and other languages, a scalar (again: single number) is typically represented as a scalar matrix.
-
-Example being:
-
-    [2]
-    
-A scalar matrix is a 1 x 1 matrix that can then typically be blended with any matrix operations natively.
-
-A quick example:
+An example:
 
     2 3 5   + 1   =   3 4 6
     4 5 6             5 6 7
 
-For all intents and purposes a matrix A, scalar matrix B, and scalar x where x is the only element in the 
-matrix B are the following:
+In numpy:
 
-    A + B = A + x
+```python
+In [1]: A = np.array([[2, 3, 5], [4, 5, 6]])
 
-This rule applies to all operations involving a scalar matrix.
+In [2]: A + 1
+Out[2]:
+array([[3, 4, 6],
+       [5, 6, 7]])
+```
+
+You can do any of the standard operations: `+`, `-`, `/`, `*`
 
 
 Elementwise operations
 =======================================
-For any matrix A or B, an elementwise operation on a matrix can only happen when the matrices are the same shape.
-
-With that assumption:
-
-Let f(A,B) be a transformation over the elements i,j and A and B, and Y be a result of f(A,B):
-
-    Y_i,j = f(A_i,j,B,i,j)
+You can do elementwise operations on two matricies `A` and `B` if they have the same shape.
 
 An example:
 
@@ -110,34 +304,29 @@ An example:
     A + B = [3,3]
             [5,5]
 
+You can do all the same operations.
+
 
 Matrix Multiplication
 ===================================
-Different from element wise matrix multiplication, a matrix matrix multiply can only happen when the columns of the first matrix are the same as the rows of the second matrix. 
+Different from elementwise matrix multiplication, a matrix multiplication can only happen when the number of columns of the first matrix are the same as the number rows of the second matrix.
 
 Let's identify suboperations of a matrix multiply. This can help contextualize the general case.
 
-## Inner Product (aka Dot Product)
+### Inner Product (aka Dot Product)
 An Inner product, or dot product is as follows:
 
 ![alt text](images/dotproduct.png "Dot Product")
 
 Of note here is that x is a row vector and y is a column vector.
 
-
-## Outer product
+### Outer product
 ![alt text](images/outerproduct.png "Outer product")
 
 Of note here is that x is a column vector and y is a row vector.
 
 
-## Matrix - Matrix multiply
-A matrix multiply is as follows:
-
-![alt text](images/matrixmultiply.png "Matrix Multiply")
-
-A readable version of this: for each i,j in your matrix that will be the number of columns in the first x number of rows in the second, Multiply the row of the first matrix by the column of the second and sum over all the results to form an individual cell where the current row or column is i,j.
-
+### Matrix multiplication
 We can think of a matrix multiply as a series of vector-vector products. That is that the (i, j)th entry of an output C is equal to the inner product of the ith row of A and the jth column of B.
 Symbolically, this looks like the following:
 
@@ -155,18 +344,28 @@ Let's do a quick example:
          [3*9+4*5, 3*7+4*8]     [47, 53]
 
 #### Numpy gotcha
-`A * B` is the *elementwise* multiplication:
+`A * B` is the *elementwise* multiplication. If you want to do matrix multiplication, use `np.dot` or `A.dot`.
 
-    A * B = [ 9, 14]
-            [15, 32]
+```python
+In [1]: A = np.array([[1, 2], [3, 4]])
 
-If you want to do matrix multiplication, use `np.dot`:
+In [2]: B = np.array([[9, 7], [5, 8]])
 
-`np.dot(A, B)` or `A.dot(B)`
+In [3]: A * B    # elementwise
+Out[3]:
+array([[ 9, 14],
+       [15, 32]])
 
-Notice how the 2 are different. A matrix matrix multiply is applying columns to rows. The number of columns in the first matrix must equal the number of rows in the second.
+In [4]: np.dot(A, B)    # matrix multiplication
+Out[4]:
+array([[19, 23],
+       [47, 53]])
 
-An elementwise matrix multiplication requires (as with all elementwise operations) that the two matrices have the same dimensions.
+In [5]: A.dot(B)    # matrix multiplication
+Out[5]:
+array([[19, 23],
+       [47, 53]])
+```
 
 
 Identity Matrix
@@ -182,6 +381,16 @@ Below is the 3x3 identity matrix:
 The following is true for all matricies:
 
     A * I = A
+    
+You can also create this matrix in numpy:
+
+```python
+In [1]: np.identity(3)
+Out[1]:
+array([[ 1.,  0.,  0.],
+       [ 0.,  1.,  0.],
+       [ 0.,  0.,  1.]])
+```
 
 
 Rank
@@ -208,8 +417,10 @@ The following are some basic properties of the rank:
 • For A ∈ R m×n , B ∈ R n×p , rank(AB) ≤ min(rank(A),rank(B)).
 • For A, B ∈ R m×n , rank(A + B) ≤ rank(A) + rank(B)
 
+There is a numpy function called `matrix_rank` ([documentation](http://docs.scipy.org/doc/numpy-dev/reference/generated/numpy.linalg.matrix_rank.html)).
 
-Inverse and Deterimanant
+
+Inverse
 ==================================
 An inverse of a matrix is defined as follows:
 
@@ -217,4 +428,155 @@ An inverse of a matrix is defined as follows:
 
 A matrix that has an inverse is called invertible.
 
-In order for a square matrix `A` to have an inverse `A^−1`, then `A` must be full rank (no dependent columns)
+In order for a square matrix `A` to have an inverse `A^−1`, then `A` must be full rank (no dependent columns).
+
+
+Feature Matrix
+==================================
+In machine learning and statistics, matrices come up as *feature matrices*. A feature matrix is a matrix where each column is an attribute and each row is a data point. Here's an example of car data. Each column represents a different piece of data about a car and each row is a specific car:
+
+|   mpg | cylinders | displacement | horsepower | weight | acceleration | model_year |
+| ----- | --------- | ------------ | ---------- | ------ | ------------ | ---------- |
+|  38.0 |         4 |        91.00 |      67.00 |   1995 |         16.2 |         82 |
+|  25.0 |         6 |        181.0 |      110.0 |   2945 |         16.4 |         82 |
+|  38.0 |         6 |        262.0 |      85.00 |   3015 |         17.0 |         82 |
+|  26.0 |         4 |        156.0 |      92.00 |   2585 |         14.5 |         82 |
+|  22.0 |         6 |        232.0 |      112.0 |   2835 |         14.7 |         82 |
+
+
+There's often a specific column we're trying to predict based on the others. Let's say we'd like to predict the miles per gallon of a car. Our feature matrix will be the other six columns and the mpg will be the column we're trying to predict.
+
+We will often have our data stored in a csv that looks like this:
+
+```
+mpg,cylinders,displacement,horsepower,weight,acceleration,model_year
+38.0,4,91.00,67.00,1995,16.2,82
+25.0,6,181.0,110.0,2945,16.4,82
+38.0,6,262.0,85.00,3015,17.0,82
+26.0,4,156.0,92.00,2585,14.5,82
+22.0,6,232.0,112.0,2835,14.7,82
+```
+
+The simplest way to get your data is to first read it into a pandas dataframe and then make it into numpy arrays. We generally use `X` for the feature matrix and `y` for what we're trying to predict.
+
+```python
+In [1]: import pandas as pd
+
+In [2]: import numpy as np
+
+In [3]: df = pd.read_csv('car_data.csv')
+
+In [4]: y = df.pop('mpg').values
+
+In [5]: X = df.values
+
+In [6]: y
+Out[6]: array([ 38.,  25.,  38.,  26.,  22.])
+
+In [7]: X
+Out[7]:
+array([[    4. ,    91. ,    67. ,  1995. ,    16.2,    82. ],
+       [    6. ,   181. ,   110. ,  2945. ,    16.4,    82. ],
+       [    6. ,   262. ,    85. ,  3015. ,    17. ,    82. ],
+       [    4. ,   156. ,    92. ,  2585. ,    14.5,    82. ],
+       [    6. ,   232. ,   112. ,  2835. ,    14.7,    82. ]])
+```
+
+
+Regression / Ordinary Least Squares (OLS)
+==================================
+This brings us back to that very first equation of what linear algebra is about. We would like to find the coeficients 
+The goal of regression is to find coefficients which can be used to predict the result using the following equation:
+
+```
+Xb = y
+```
+
+Since `X` has 6 features, we will need a vector of length 6 for our coefficients.
+
+Here's an example:
+
+```python
+In [8]: coefs = np.array([1.2, 0, -0.4, 0, 1.8, 0.3])
+
+In [9]: X.dot(coefs)
+Out[9]: array([ 31.76,  17.32,  28.4 ,  18.7 ,  13.46])
+
+In [10]: y
+Out[10]: array([ 38.,  25.,  38.,  26.,  22.])
+```
+
+We can see the comparison of the true `y` values with the *predicted* y values.
+
+This is also called the *best fit line*, but we will really only be able to visualize it as a line if we have one or two features.
+
+
+Normal Equation
+==================================
+The stats method of solving for the coefficients is using the normal equation.
+
+The idea is that we'd like to minimize the error. We use the sum of the squares of the errors. Using the above example, we can calculate the error:
+
+```
+     True y: [ 38.  ,  25.  ,  38.  ,  26.  ,  22.  ]
+Predicted y: [ 31.76,  17.32,  28.4 ,  18.7 ,  13.46]
+
+Errors:
+38. - 31.76 = 6.24
+25. - 17.32 = 7.68
+38. - 28.4  = 9.6
+26. - 18.7  = 7.3
+22. - 13.46 = 8.54
+
+Sum of squared error:
+6.24**2 + 7.68**2 + 9.6**2 + 7.3**2 + 8.54**2 = 316.3016
+```
+
+Mathematically, this can be written as follows. Here beta is our b (the coefficients).
+
+The *residuals* (errors)
+
+![residuals](residuals.png)
+
+The sum of squared residuals:
+
+![sum squared error](sum_squared_error.png)
+
+Simplified:
+
+![sum squared error](sum_sqaured_error2.png)
+![sum squared error](sum_sqaured_error3.png)
+
+To find the coefficients where the error is minimized, we take the derivative and set it to 0.
+
+![derivative of sum squared error](derivative_sse.png)
+![derivative of sum squared error](derivative_sse2.png)
+![derivative of sum squared error](derivative_sse3.png)
+
+Now we can solve for the coefficients and this gives us the normal equation:
+
+![normal equation](normal_equation.png)
+
+
+Statsmodels
+==================================
+In practice, we can use implementations of the normal equation already built. [statsmodels](http://statsmodels.sourceforge.net/devel/generated/statsmodels.regression.linear_model.OLS.html) is module with a lot of statistics tools, including OLS (ordinary least squares).
+
+```python
+In [11]: import statsmodels.api as sm
+
+In [12]: model = sm.OLS(y, X)
+
+In [13]: results = model.fit()
+
+In [14]: results.params    # coefficients
+Out[14]:
+array([  1.20995910e+00,   1.86452558e-02,  -4.15023306e-01,
+         4.06432084e-04,   1.80950230e+00,   3.55429727e-01])
+
+In [15]: results.predict(X)    # predicted values
+Out[15]: array([ 38.,  25.,  38.,  26.,  22.])
+
+In [16]: y    # true values
+Out[16]: array([ 38.,  25.,  38.,  26.,  22.])
+```
