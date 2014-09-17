@@ -12,6 +12,7 @@ Linear Algebra
      1. [Elementwise Operations](#elementwise-operations)
      1. [Matrix Multiplication](#matrix-multiplication)
      1. [Identity Matrix](#identity-matrix)
+     1. [Axis wise operations](#axis-wise-operations)
      1. [Rank](#rank)
      1. [Inverse](#inverse)
 1. [Feature Matrix](#feature-matrix)
@@ -428,15 +429,37 @@ Numpy has max, min, mean and other aggregate functions. You can get these values
 We'll work with this example matrix:
 
 ```python
-In [119]: A = np.array([[7, 6, 5], [0, 2, 1]])
+In [1]: A = np.array([[7, 6, 5], [0, 2, 1]])
+
+In [2]: A
+Out[2]:
+array([[7, 6, 5],
+       [0, 2, 1]])
 ```
 
 Aggregates over the whole matrix:
 
 ```python
-In [120]: A.max()
-Out[120]: 7
+In [3]: A.max()
+Out[3]: 7
 
+In [4]: A.mean()
+Out[4]: 3.5
+```
+
+For each column:
+
+```python
+In [5]: A.mean(axis=0)
+Out[5]: array([ 3.5,  4. ,  3. ])
+```
+
+For each row:
+
+```python
+In [6]: A.mean(axis=1)
+Out[6]: array([ 6.,  1.])
+```
 
 
 ## Rank
