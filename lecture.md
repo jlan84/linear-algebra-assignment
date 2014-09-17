@@ -151,8 +151,8 @@ Let's do a quick example:
      B = [9, 7]
          [5, 8]
     
-    AB = [19, 23]
-         [47, 53]
+    AB = [1*9+2*5, 1*7+2*8]  =  [19, 23]
+         [3*9+4*5, 3*7+4*8]     [47, 53]
 
 #### Numpy gotcha
 `A * B` is the *elementwise* multiplication:
