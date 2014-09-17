@@ -75,7 +75,7 @@ Matrix Matrix Multiplication
 Elementwise Matrix Operations
 ========================================
 1. Create 2 random 6 x 2 matrices as `A` and `B`.
-2. Square `a` (this will be the same shape).
+2. Square `A` (this will be the same shape).
 3. Add, subtract, multiply and divide `A` and `B` (This will be the same shape).
 
 
