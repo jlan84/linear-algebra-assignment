@@ -14,7 +14,7 @@ Linear Algebra
 1. [Rank](#rank)
 1. [Inverse](#inverse)
 2. [Feature Matrix](#feature-matrix)
-3. [Regression / Ordinary Least Squares (OLS)(#regression--ordinary-least-squares-ols)
+3. [Regression / Ordinary Least Squares (OLS)](#regression--ordinary-least-squares-ols)
 1. [Normal Equation](#normal-equation)
 1. [Statsmodels](#statsmodels)
 
