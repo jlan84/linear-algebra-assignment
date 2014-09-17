@@ -1,6 +1,6 @@
 Linear Algebra
 ===================================
-In this sprint, we will be doing a numpy focused linear algebra overview.
+In this exercise, we will be doing a numpy focused linear algebra overview.
 
 This will cover all of the basic operations you can do with matrices, as well as some properties of linear algebra with relevant machine learning.
 
@@ -50,79 +50,65 @@ Use numpy to complete the following tasks.
 
 Scalar Operations
 ==============================
-1. Given: 
-    
-         [2 3 5]
-
-   Do a scalar addition, subtraction, multiply, divide by as separate scalars:
-   
-          0.5
-          -2
-           0
-
-2. Given: [4, 5, 6] (scalar matrix)
-
-          0.5
-          -2
-           0
-
-3. Extra Credit: Vectorize number 1 and 2 and split the matrices out to get the equivalent results. (Broadcasting!)
-
-4. Extra Credit: Given [2] multiply this by a random 2 x 2 pandas dataframe. The output is a numpy array.
+1. Create this numpy array (called `v`): `[2 3 5 8 9]`
+2. Do a scalar addition by 0.5.
+3. Do a scalar multiple by -2.
+4. Do a scalar divide by 0. What happens? Is that what you expected?
+5. Create a 1 by 5 vector `b` so that the following would get the same result as you did in #2: `v + b` (called broadcasting).
 
 
 Matrix Vector Multiplication
 ============================================
-1. Create a random column vector, row vector, and 3 x 3 square matrix called `column_vector`, `row_vector`, and `rand_matrix` respectively.
+1. Create a random length 3 column vector, length 3 row vector, and 3 x 3 square matrix called `column_vector`, `row_vector`, and `rand_matrix`, respectively.
 2. Perform a vector vector multiply on `column_vector` and `row_vector`. This should output a `n x m` matrix where `n` is the number of rows in `row_vector` and `m` is the number of columns in `column_vector`. Say `column_vector` is a 2 x 1 and `row_vector` is a 1 x 3, output will be a 2 x 3 matrix.
 3. For both `column_vector` and `row_vector`, multiply by `rand_matrix`.
 4. Compute the dot product of `row_vector` and `column_vector`.
 5. Multiply each row of the `rand_matrix` by `row_vector`.
-6. If we have a 2 x 3 a 3 x 2, can you matrix multiply them? If so, what is the shape?
-7. Taking the output of the resulting matrix from 6, can we matrix multiply a 5 x 6 on that? If so, what is the shape?
+6. If A is a 3 x 2 and B is a 4 x 3, can you matrix multiply them (AB)? If so, what is the shape? Can you matrix multiply them in the other direction (BA)? If so, what's the shape of that?
 
 
 Matrix Matrix Multiplication
 ======================================
 1. Create a random 3 x 6 matrix as `rand_matrix`.
 2. Matrix multiply `rand_matrix` and the transpose of `rand_matrix`.
-3. Reshape `rand_matrix` (create a copy) and matrix multiply it by the original. This should be a 3 x 3.
-4. Implement matrix multiply given 2 2-dimensional lists of numbers. Test it out with a 6 x 2 matrix and a 2 x 6 matrix. 
+3. Reshape `rand_matrix` so that it can be multiplied by the original. Do the multiplication. The result should be a 3 x 3.
 
 
 Elementwise Matrix Operations
 ========================================
-1. Create 2 random 6 x 2 matrices as `rand_matrix` and `rand_matrix_2`.
-2. Square `rand_matrix` (this will be the same shape).
-3. Add, subtract, multiply and divide `rand_matrix` and `rand_matrix_2` (This will be the same shape).
-4. Implement element wise multiply given 2 2d lists.
-5. Implement dot product given 2 2d lists.
+1. Create 2 random 6 x 2 matrices as `A` and `B`.
+2. Square `a` (this will be the same shape).
+3. Add, subtract, multiply and divide `A` and `B` (This will be the same shape).
 
 
 Axis wise operations and operations across different dimensional matrices
 ================================
-1. Create a 4 x 1 random matrix as `rand_matrix`.
-2. Create a 1 x 3 random matrix as `rand_matrix_2`.
-3. Add the 2 (yes this is possible!) using new axis (this will be a 4 x 3).
-4. Create a random 2 x 3 matrix as `rand_matrix`.
-5. Calculate the column and row wise sums,mean and standard deviation of the matrix. 
-6. Multiply column 1 (0 based indices!) of rand_matrix by 2.
+1. Create a 4 x 1 random matrix as `A`.
+2. Create a 1 x 3 random matrix as `B`.
+3. Add the 2 (yes this is possible!). What is the shape of the result? What did it to?
+4. Create a random 2 x 3 matrix as `C`.
+5. Calculate the sums, mean and standard deviation of the values in the matrix. 
+6. Calculate the column wise sums, mean and standard deviation of the matrix. 
+7. Calculate the row wise sums, mean and standard deviation of the matrix.
 
 
 Rank
 ======================================
-1. Create a random 3 x 3 matrix as `rand_matrix`.
-2. Add a column to the matrix to make it a 3 x 4 populating it with 2 * the first column.
+1. Create a random 5 x 3 matrix as `A`.
+2. Create a matrix `B` with a column added to the matrix to make it a 5 x 4 populating it with 2 * the first column.
 3. Calculate the rank of the matrix. This should be a number.
 
 
 Extra Credit 1:
 ===========================
-1. Implement transpose without using the numpy method. Can you do it without using a loop?
-2. Implement the reshape function.
+1. Implement matrix multiply given two 2-dimensional lists of numbers. Test it out with a 6 x 3 matrix and a 3 x 5 matrix. 
+2. Implement transpose without using the numpy method. Can you do it without using a loop?
+3. Implement the reshape function.
+4. Implement elementwise multiply given 2 2d lists.
+5. Implement dot product given 2 2d lists.
 
 
-Extra Credit (> 2 dimensional data, yes this is used! Look in to tensors) 
+Extra Credit (> 2 dimensional data, yes this is used! Look into tensors) 
 ===========================
 1. Create a random 3d tensor with 2 slices and 3 rows per slice.
 2. Sum the 2 slices of the tensor.
