@@ -1,26 +1,26 @@
 Linear Algebra
-====================================
+==============
 
 1. [What is Linear Algebra?](#what-is-linear-algebra)
 1. [Matrices and Vectors](#matrices-and-vectors)
-1. [Dimensions](#dimensions)
-1. [Transpose](#transpose)
-1. [Indexing in numpy](#indexing-in-numpy)
-1. [Modifying numpy vectors and matricies](#modifying-numpy-vectors-and-matricies)
-1. [Scalar Operations](#scalar-operations)
-1. [Elementwise Operations](#elementwise-operations)
-1. [Matrix Multiplication](#matrix-multiplication)
-1. [Identity Matrix](#identity-matrix)
-1. [Rank](#rank)
-1. [Inverse](#inverse)
-2. [Feature Matrix](#feature-matrix)
-3. [Regression / Ordinary Least Squares (OLS)](#regression--ordinary-least-squares-ols)
-1. [Normal Equation](#normal-equation)
-1. [Statsmodels](#statsmodels)
+     1. [Dimensions](#dimensions)
+     1. [Transpose](#transpose)
+     1. [Indexing in numpy](#indexing-in-numpy)
+     1. [Modifying numpy vectors and matricies](#modifying-numpy-vectors-and-matricies)
+     1. [Concatenate](#concatenate)
+     1. [Scalar Operations](#scalar-operations)
+     1. [Elementwise Operations](#elementwise-operations)
+     1. [Matrix Multiplication](#matrix-multiplication)
+     1. [Identity Matrix](#identity-matrix)
+     1. [Rank](#rank)
+     1. [Inverse](#inverse)
+1. [Feature Matrix](#feature-matrix)
+1. [Regression / Ordinary Least Squares (OLS)](#regression--ordinary-least-squares-ols)
+     1. [Normal Equation](#normal-equation)
+     1. [Statsmodels](#statsmodels)
 
 
-What is Linear Algebra?
-==============================
+# What is Linear Algebra?
 
 Linear algebra is about being able to solve systems of equations in an efficient manner.
 
@@ -47,8 +47,8 @@ Now the equation can be written as `Xb = y`.
 Solving this by hand can take a long time. With matrices, there are a lot of established rules of math that come in to play that allows us to do computations efficiently.
 
 
-Matrices and Vectors
-=====================================
+# Matrices and Vectors
+
 Matrices are a 2d brick of numbers. Vectors are a 1d matrix.
 
 Here is an example matrix
@@ -83,9 +83,11 @@ array([[ 0.,  0.],
        [ 0.,  0.]])
 ```
 
+Now we'll get into some different matrix operations and what we can do with numpy.
 
-Dimensions
-=====================================
+
+## Dimensions
+
 The dimensions of a matrix are generally written as rows x columns. In numpy, we can get the dimensions of a matrix using `shape`.
 
 ```python
@@ -101,8 +103,8 @@ Out[3]: (2, 3)
 Note that there is both a `shape` function and a `shape` method. You can use either.
 
 
-Transpose
-=====================================
+## Transpose
+
 `A^T` (or `A'`) is `A` transpose. This flips the columns and rows of the matrix. A quick example:
 
     A =   6  10   9
@@ -161,8 +163,8 @@ array([[2],
 ```
 
 
-Indexing in numpy
-==================================
+## Indexing in numpy
+
 Let's go through the syntax for getting specific values, rows or columns from a numpy array.
 
 For our examples, we'll be using the following vector and matrix:
@@ -215,8 +217,8 @@ array([[7, 2],
 ```
 
 
-Modifying numpy vectors and matricies
-==================================
+## Modifying numpy vectors and matricies
+
 Numpy arrays can't change size or dimensions, but you can modify their values.
 
 ```python
@@ -272,8 +274,30 @@ array([[ 3, 22, 11,  5],
 ```
 
 
-Scalar Operations
-==================================
+## Concatenate
+
+You can concatenate two matricies together, as long as their sizes match. The default to concatenate on axis 0, which means you are adding new columns to the matrix (so the number of rows must match). You can also concatenate on axis 1 (add new rows).
+
+```python
+In [1]: A = np.array([[1, 2], [3, 4]])
+
+In [2]: B = np.array([[5, 6]])
+
+In [3]: np.concatenate((A, B))
+Out[3]:
+array([[1, 2],
+       [3, 4],
+       [5, 6]])
+       
+In [4]: np.concatenate((A, B.T), axis=1)
+Out[4]:
+array([[1, 2, 5],
+       [3, 4, 6]])
+```
+
+
+## Scalar Operations
+
 Matrices can actually have a number applied elementwise to each. This is called a scalar operation.
 
 An example:
@@ -295,8 +319,8 @@ array([[3, 4, 6],
 You can do any of the standard operations: `+`, `-`, `/`, `*`
 
 
-Elementwise operations
-=======================================
+## Elementwise operations
+
 You can do elementwise operations on two matricies `A` and `B` if they have the same shape.
 
 An example:
@@ -311,8 +335,8 @@ An example:
 You can do all the same operations.
 
 
-Matrix Multiplication
-===================================
+## Matrix Multiplication
+
 Different from elementwise matrix multiplication, a matrix multiplication can only happen when the number of columns of the first matrix are the same as the number rows of the second matrix.
 
 Let's identify suboperations of a matrix multiply. This can help contextualize the general case.
@@ -330,7 +354,7 @@ Of note here is that x is a row vector and y is a column vector.
 Of note here is that x is a column vector and y is a row vector.
 
 
-### Matrix multiplication
+### Matrix matrix multiplication
 We can think of a matrix multiply as a series of vector-vector products. That is that the (i, j)th entry of an output C is equal to the inner product of the ith row of A and the jth column of B.
 Symbolically, this looks like the following:
 
@@ -372,8 +396,8 @@ array([[19, 23],
 ```
 
 
-Identity Matrix
-==================================
+## Identity Matrix
+
 An identity matrix is a square matrix with all 1s on the diagonal zeros everywhere else.
 
 Below is the 3x3 identity matrix:
@@ -397,8 +421,8 @@ array([[ 1.,  0.,  0.],
 ```
 
 
-Rank
-=========================
+## Rank
+
 Rank is about finding dependent rows and columns in a matrix. A dependent row (or column) is a a row (or column) that is a linear combination of other rows (or columns).
 
 Some examples of this:
@@ -424,8 +448,8 @@ The following are some basic properties of the rank:
 There is a numpy function called `matrix_rank` ([documentation](http://docs.scipy.org/doc/numpy-dev/reference/generated/numpy.linalg.matrix_rank.html)).
 
 
-Inverse
-==================================
+## Inverse
+
 An inverse of a matrix is defined as follows:
 
     A^−1 A = I = A A^−1
@@ -435,17 +459,17 @@ A matrix that has an inverse is called invertible.
 In order for a square matrix `A` to have an inverse `A^−1`, then `A` must be full rank (no dependent columns).
 
 
-Feature Matrix
-==================================
+# Feature Matrix
+
 In machine learning and statistics, matrices come up as *feature matrices*. A feature matrix is a matrix where each column is an attribute and each row is a data point. Here's an example of car data. Each column represents a different piece of data about a car and each row is a specific car:
 
-|   mpg | cylinders | displacement | horsepower | weight | acceleration | model_year |
-| ----- | --------- | ------------ | ---------- | ------ | ------------ | ---------- |
-|  38.0 |         4 |        91.00 |      67.00 |   1995 |         16.2 |         82 |
-|  25.0 |         6 |        181.0 |      110.0 |   2945 |         16.4 |         82 |
-|  38.0 |         6 |        262.0 |      85.00 |   3015 |         17.0 |         82 |
-|  26.0 |         4 |        156.0 |      92.00 |   2585 |         14.5 |         82 |
-|  22.0 |         6 |        232.0 |      112.0 |   2835 |         14.7 |         82 |
+|   mpg | cylinders | displacement | horsepower | weight | acceleration | year |
+| ----- | --------- | ------------ | ---------- | ------ | ------------ | ---- |
+|  38.0 |         4 |        91.00 |      67.00 |   1995 |         16.2 |   82 |
+|  25.0 |         6 |        181.0 |      110.0 |   2945 |         16.4 |   82 |
+|  38.0 |         6 |        262.0 |      85.00 |   3015 |         17.0 |   82 |
+|  26.0 |         4 |        156.0 |      92.00 |   2585 |         14.5 |   82 |
+|  22.0 |         6 |        232.0 |      112.0 |   2835 |         14.7 |   82 |
 
 
 There's often a specific column we're trying to predict based on the others. Let's say we'd like to predict the miles per gallon of a car. Our feature matrix will be the other six columns and the mpg will be the column we're trying to predict.
@@ -453,7 +477,7 @@ There's often a specific column we're trying to predict based on the others. Let
 We will often have our data stored in a csv that looks like this:
 
 ```
-mpg,cylinders,displacement,horsepower,weight,acceleration,model_year
+mpg,cylinders,displacement,horsepower,weight,acceleration,year
 38.0,4,91.00,67.00,1995,16.2,82
 25.0,6,181.0,110.0,2945,16.4,82
 38.0,6,262.0,85.00,3015,17.0,82
@@ -487,8 +511,8 @@ array([[    4. ,    91. ,    67. ,  1995. ,    16.2,    82. ],
 ```
 
 
-Regression / Ordinary Least Squares (OLS)
-==================================
+# Regression / Ordinary Least Squares (OLS)
+
 This brings us back to that very first equation of what linear algebra is about. We would like to find the coeficients 
 The goal of regression is to find coefficients which can be used to predict the result using the following equation:
 
@@ -515,8 +539,8 @@ We can see the comparison of the true `y` values with the *predicted* y values.
 This is also called the *best fit line*, but we will really only be able to visualize it as a line if we have one or two features.
 
 
-Normal Equation
-==================================
+## Normal Equation
+
 The stats method of solving for the coefficients is using the normal equation.
 
 The idea is that we'd like to minimize the error. We use the sum of the squares of the errors. Using the above example, we can calculate the error:
@@ -562,8 +586,8 @@ Now we can solve for the coefficients and this gives us the normal equation:
 ![normal equation](images/normal_equation.png)
 
 
-Statsmodels
-==================================
+## Statsmodels
+
 In practice, we can use implementations of the normal equation already built. [statsmodels](http://statsmodels.sourceforge.net/devel/generated/statsmodels.regression.linear_model.OLS.html) is module with a lot of statistics tools, including OLS (ordinary least squares).
 
 ```python
