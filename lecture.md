@@ -548,8 +548,8 @@ The sum of squared residuals:
 
 Simplified:
 
-![sum squared error](images/sum_sqaured_error2.png)
-![sum squared error](images/sum_sqaured_error3.png)
+![sum squared error](images/sum_squared_error2.png)
+![sum squared error](images/sum_squared_error3.png)
 
 To find the coefficients where the error is minimized, we take the derivative and set it to 0.
 
