@@ -38,14 +38,13 @@ Use numpy to complete the following tasks.
 
 1. Create a row vector with numpy (1 x some m).
 2. Create a column vector with numpy (some n x 1).
-3. Create a scalar vector (1 x 1).
-4. Create a square 6 by 6 matrix.
-5. Create a random 2 x 3 matrix and a random 3 x 2 matrix. You should be able to do this with one command (look at the [numpy random module](http://docs.scipy.org/doc/numpy/reference/routines.random.html)). You can fill it in with integers or real numbers, your choice of the range.
-6. Create a 6 x 6 identity matrix.
-7. Create a matrix with any values and size and save it as `A`.
-8. Get the number of rows and columns of the matrix `A`.
-9. Create a transpose of the matrix `A`.
-10. Reshape the matrix `A` in to a 1 x n vector, where n is whatever it needs to be for the size of your matrix.
+3. Create a square 6 by 6 matrix.
+4. Create a random 2 x 3 matrix and a random 3 x 2 matrix. You should be able to do this with one command (look at the [numpy random module](http://docs.scipy.org/doc/numpy/reference/routines.random.html)). You can fill it in with integers or real numbers, your choice of the range.
+5. Create a 6 x 6 identity matrix.
+6. Create a matrix with any values and size and save it as `A`.
+7. Get the number of rows and columns of the matrix `A`.
+8. Create a transpose of the matrix `A`.
+9. Reshape the matrix `A` in to a 1 x n vector, where n is whatever it needs to be for the size of your matrix.
 
 
 Scalar Operations
