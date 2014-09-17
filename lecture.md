@@ -486,7 +486,7 @@ The following are some basic properties of the rank:
 • For A ∈ R m×n , B ∈ R n×p , rank(AB) ≤ min(rank(A),rank(B)).
 • For A, B ∈ R m×n , rank(A + B) ≤ rank(A) + rank(B)
 
-There is a numpy function called `matrix_rank` ([documentation](http://docs.scipy.org/doc/numpy-dev/reference/generated/numpy.linalg.matrix_rank.html)).
+There is a numpy function called `matrix_rank` ([documentation](http://docs.scipy.org/doc/numpy-dev/reference/generated/numpy.linalg.matrix_rank.html)). Note that `np.rank` *is not what we want*.
 
 
 ## Inverse
