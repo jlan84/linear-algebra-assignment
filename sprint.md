@@ -4,8 +4,14 @@ In this exercise, we will be doing a numpy focused linear algebra overview.
 
 This will cover all of the basic operations you can do with matrices, as well as some properties of linear algebra with relevant machine learning.
 
-One thing of note, please create a function per exercise. This is to ensure that named clashes from specified names in each function do not interfere with each other.
+You should submit an python or markdown file with your commands.
 
+* If you're using ipython shell, use this to save your session: `save solutions.py 1-99` (this saves lines 1-99 to the file `solutions.py`)
+* If you're using ipython notebook, go to `File -> Download as -> Python (.py)` to save it as a python file.
+* If you're using markdown, make sure to use syntax highlighting by writing your code like this:
+        ```python
+        x = 10
+        ```
 
 Overview
 ==============================
