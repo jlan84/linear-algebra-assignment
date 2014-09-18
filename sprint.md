@@ -109,7 +109,5 @@ These are to practice linear algebra and programming. You shouldn't use any nump
 
 Extra Credit (> 2 dimensional data, yes this is used! Look into tensors) 
 ===========================
-1. Create a random 3d tensor with 2 slices and 3 rows per slice.
+1. Create a random 3d tensor with 2 slices, 3 rows and 4 columns (you should create it just like you create a matrix except there's an extra dimension!)
 2. Sum the 2 slices of the tensor.
-3. Create a random 4d tensor with 4 slices, 3 rows per slice, and 2 columns.
-4. Add 1 to the first row of each slice of the tensor created in 3.
