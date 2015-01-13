@@ -28,12 +28,12 @@ For this part of the exercise we'll use Fisher's Iris data set.
 
 4. Calculate the mean vector from the data matrix and plot it along with all the data points.
 
-5. Obtain mean-center the data.
+5. Obtain mean-centered data by subtracting mean vector from each data point.
 
 6. Write a function to calculate the distance between two vectors. Use this to calculate the distance of every point from the mean vector. Plot the histogram of the distances.
 
-7. Write a function to calculate the cosine similarity between two vectors. Calculate the cosine similarity of each point w.r.t the mean vector. Plot histogram of the cosine similarities. How does this differ from distance metric.
+7. Write a function to calculate the cosine similarity between two vectors. Calculate the cosine similarity of each point w.r.t the mean vector. Plot histogram of the cosine similarities.
 
-8. Write a function to calculate projection of one vector onto the other. Use this function to calculate the projection of every point (in centered data)  onto (1,1). Plot these projections along with the actual data points.
+8. Write a function to calculate projection of one vector onto another vector. Use this function to calculate the projections of every point (using centered data) onto vector (1,1). Plot these projections along with the actual data points.
 
-9. Now calculate the projections of all data point (in centered data) onto the vector (-1,1). Plot these projections. How do these projections differ from the previous one. (My idea here is the projections on (-1,1) separates two data clusters in iris data).
+9. Now calculate the projections of all data points (using centered data) onto the vector (-1,1). Plot these projections. How do these projections differ from the previous one.
