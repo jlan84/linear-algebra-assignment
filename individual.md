@@ -1,8 +1,8 @@
-##Linear Algebra
+#Linear Algebra
 
 First part of this exercise gives you some practice of matrix multiplication.
 
-**Markov Process, Stochastic Matrix**
+### Part 1: Markov Process, Stochastic Matrix
 
 Suppose that the 2004 state of land use in a city of 60 mi^2 of built-up area is
 
@@ -18,7 +18,7 @@ Note: **A** is a stochastic matrix, that is, a square matrix with all entries no
 
 
 
-**EDA of Fisher's Iris data**
+### Part 2: EDA of Fisher's Iris data
 
 For this part of the exercise we'll use Fisher's Iris data set.
 
