@@ -20,20 +20,20 @@ Mote: **A** is a stochastic matrix, that is, a square matrix with all entries no
 
 For this part of the exercise we'll use Fisher's Iris data set.
 
-- Read the iris dataset into a dataframe.
+1. Read the [iris](data/iris.txt) dataset into a dataframe.
 
-- Plot the sepal width vs sepal lenght. For the rest of the exercise, we'll use only these two features.
+2. Plot the sepal width vs sepal lenght. For the rest of the exercise, we'll use only these two features.
 
-- Construct a data matrix using sepal width and sepal length.
+3. Construct a data matrix using sepal width and sepal length.
 
-- Calculate the mean vector from the data matrix and plot it along with all the data points.
+4. Calculate the mean vector from the data matrix and plot it along with all the data points.
 
-- Obtain mean-center the data.
+5. Obtain mean-center the data.
 
-- Write a function to calculate the distance between two vectors. Use this to calculate the distance of every point from the mean vector. Plot the histogram of the distances.
+6. Write a function to calculate the distance between two vectors. Use this to calculate the distance of every point from the mean vector. Plot the histogram of the distances.
 
-- Write a function to calculate the cosine similarity between two vectors. Calculate the cosine similarity of each point w.r.t the mean vector. Plot histogram of the cosine similarities. How does this differ from distance metric.
+7. Write a function to calculate the cosine similarity between two vectors. Calculate the cosine similarity of each point w.r.t the mean vector. Plot histogram of the cosine similarities. How does this differ from distance metric.
 
-- Write a function to calculate projection of one vector onto the other. Use this function to calculate the projection of every point (in centered data)  onto (1,1). Plot these projections along with the actual data points.
+8. Write a function to calculate projection of one vector onto the other. Use this function to calculate the projection of every point (in centered data)  onto (1,1). Plot these projections along with the actual data points.
 
-- Now calculate the projections of all data point (in centered data) onto the vector (-1,1). Plot these projections. How do these projections differ from the previous one. (My idea here is the projections on (-1,1) separates two data clusters in iris data).
+9. Now calculate the projections of all data point (in centered data) onto the vector (-1,1). Plot these projections. How do these projections differ from the previous one. (My idea here is the projections on (-1,1) separates two data clusters in iris data).
