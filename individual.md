@@ -14,7 +14,7 @@ Find the states in 2009 and 2014, assuming that the transition probabilities for
 
 ![](images/transition_matix_A.png)
 
-Mote: **A** is a stochastic matrix, that is, a square matrix with all entries nonnegative and all column sums equal to 1. Our example concerns a Markov process,1 that is, a process for which the probability of entering a certain state depends only on the last state occupied (and the matrix **A**), not on any earlier state.
+Note: **A** is a stochastic matrix, that is, a square matrix with all entries nonnegative and all column sums equal to 1. Our example concerns a Markov process,1 that is, a process for which the probability of entering a certain state depends only on the last state occupied (and the matrix **A**), not on any earlier state.
 
 
 
