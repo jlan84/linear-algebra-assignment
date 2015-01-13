@@ -2,7 +2,7 @@
 
 First part of this exercise gives you some practice of matrix multiplication.
 
-Markov Process, Stochastic Matrix
+**Markov Process, Stochastic Matrix**
 
 Suppose that the 2004 state of land use in a city of 60 mi^2 of built-up area is
 
@@ -17,6 +17,8 @@ Find the states in 2009 and 2014, assuming that the transition probabilities for
 Note: **A** is a stochastic matrix, that is, a square matrix with all entries nonnegative and all column sums equal to 1. Our example concerns a Markov process,1 that is, a process for which the probability of entering a certain state depends only on the last state occupied (and the matrix **A**), not on any earlier state.
 
 
+
+**EDA of Fisher's Iris data**
 
 For this part of the exercise we'll use Fisher's Iris data set.
 
