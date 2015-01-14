@@ -31,15 +31,3 @@ Now that we have a transition matrix, the next step is to iterate on this from o
 4. Plot how the probabilities change.  Iterate the matrix through the first ten steps.  At each step create a bar plot of the surfers probability vector. (or if you want to get fancy you can plot everything on one [3 dimensional plot](http://matplotlib.org/mpl_toolkits/mplot3d/tutorial.html) by representing time in the z direction)
 
 5. This time to compute the stationary distribution, we can use numpy's matrix operations. Using the function for calculating [eigenvectors](http://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.eig.html) compute the stationary distibution (page rank).  Is it the same as what you found from above?  What is it's eigenvalue?
-
-## Extra Credit
-
-### A real web
-
-Now that you have explored and gotten a sense for a simple graph, it is time to apply and use your function on a much larger graph.  
-
-1. Using the High Energy Physics citation [network](http://snap.stanford.edu/data/cit-HepTh.html) use your function to calculate the PageRank of each node.
-
-2. Which paper has the highest pagerank?
-
-3. Check your results by using GraphLab's [pagerank](http://graphlab.com/products/create/docs/graphlab.toolkits.graph_analytics.html#pagerank).  Do the results match?  Why might they not match?
