@@ -1,4 +1,3 @@
-This sprint will be an introduction to linear algrebra using [numpy](http://www.numpy.org/).  The lecture notes can be found in [lecture.md](lecture.md) and the exercise is contained in [sprint.md](sprint.md)
 
 ## References
 
