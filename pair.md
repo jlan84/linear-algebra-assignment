@@ -4,13 +4,9 @@
 
 Markov processes as considered in morning sprint lead to eigenvalue problems if we ask for the limit state of the process in which the state vector **x** is reproduced under the multiplication by the stochastic matrix **A** governing the process, that is, **Ax** = **x**. Hence **A** should have the eigenvalue 1, and **x** should be a corresponding eigenvector. This is of practical interest because it shows the long-term tendency of the development modeled by the process.
 
-You can find basic introduciton to Markov process ![here](http://austingwalters.com/introduction-to-markov-processes/)
-
 1. Lets reconsider the stochastic matrix from the morning sprint:  
 ![](images/transition_matix_A.png)  
 Find the eigenvector for this matrix corresponding to the eigenvalue of 1.
-
-
 
 
 ## PAgeRank for a toy WWW
