@@ -4,19 +4,16 @@
 
 Markov processes as considered in morning sprint lead to eigenvalue problems if we ask for the limit state of the process in which the state vector **x** is reproduced under the multiplication by the stochastic matrix **A** governing the process, that is, **Ax** = **x**. Hence **A** should have the eigenvalue 1, and **x** should be a corresponding eigenvector. This is of practical interest because it shows the long-term tendency of the development modeled by the process.
 
-
 1. Lets reconsider the stochastic matrix from the morning sprint:  
-![](img/transition_matix_A.png)  
+![](images/transition_matix_A.png)  
 Find the eigenvector for this matrix corresponding to the eigenvalue of 1. (Hint: you need to solve three linear equation! To make your life easier, choose x_3 = 1.)
-
-
 
 
 ## PAgeRank for a toy WWW
 
 For this exercise we will be working with a simple network of websites.
 
-![](img/pageweb.png)
+![](images/pageweb.png)
 
 In this image, each node corresponds to a web page and each directed edge corresponds to one page referencing the other.  These web pages correspond to the states our Markov chain can be in.  And assume that the model of our chain is that of a random surfer/walker.  
 
