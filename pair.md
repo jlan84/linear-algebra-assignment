@@ -102,7 +102,6 @@ corresponds to the principal eigenvector (largest) of the transition matrix.
    simple web where position _i_, _j_ in the matrix corresponds to the
    probability of going from state _i_ to state _j_.
 
-
 2. Now that we have a transition matrix, the next step is to iterate on this
    from one page to the next (like someone blindly navigating the internet) and
    see where we end up. The probability distribution for our random surfer can
