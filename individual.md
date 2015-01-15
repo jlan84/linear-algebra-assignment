@@ -36,7 +36,7 @@ For this part of the exercise we'll use Fisher's Iris data set.
 2. Plot the sepal width vs sepal length. For the rest of the exercise,
    we'll use only these two features.
 
-3. Construct a data matrix using sepal width and sepal length.
+3. Construct a data matrix (`np.array`) using sepal width and sepal length.
 
 4. Calculate the mean vector from the data matrix and plot it along with all the data points.
 
