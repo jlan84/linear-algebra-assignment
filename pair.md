@@ -1,4 +1,4 @@
-## Eigenvalue Problems Arising from Markov Processes
+## Part 1: Eigenvalue Problems Arising from Markov Processes
 
 Markov processes as considered in morning sprint lead to eigenvalue problems if
 we ask for the limit state of the process in which the state vector **x** is
@@ -15,7 +15,7 @@ because it shows the long-term tendency of the development modeled by the proces
 
    Find the eigenvector for this matrix corresponding to the eigenvalue of 1.
 
-## PageRank
+## Part 2: PageRank
 
 Here we will be implementing the most basic form of the algorithm that made
 [Google the company it is today](http://en.wikipedia.org/wiki/PageRank).
@@ -46,7 +46,7 @@ know how we will move on this Markov Chain. **We will start off with a very
 explicit way of calculating our transitions using dictionaries and then we
 will see linear algebra can simplify the implmentation**.
 
-## Dictionary Implementation
+## Part 3: Dictionary Implementation
 
 1. Create a dictionary representing **the image above** and the transitions
    between its nodes. Each key in this dictionary will correspond to a
@@ -90,7 +90,7 @@ will see linear algebra can simplify the implmentation**.
    What is the page with the highest page rank (most probable to be on)?
 
 
-## Linear Algebra Implementation
+## Part 4: Linear Algebra Implementation
 
 Hopefully the above process made you think of matrices! Often PageRank is
 formalized using linear algebra. In this alternative formulation the PageRank
@@ -129,16 +129,20 @@ corresponds to the principal eigenvector (largest) of the transition matrix.
    stationary distibution (page rank).  Is it the same as what you found
    from above?  What is it's eigenvalue?
 
-## Extra Credit
+## Part 5: Extra Credit (More PageRank)
 
 ### A real web
 
-Now that you have explored and gotten a sense for a simple graph, it is time to apply and use your function on a much larger graph.
+Now that you have explored and gotten a sense for a simple graph, it is time to
+apply and use your function on a much larger graph.
 
-1. Using the High Energy Physics citation [network](http://snap.stanford.edu/data/cit-HepTh.html)
-   use your function to calculate the PageRank of each node.
+1. Download the High Energy Physics citation
+   [network](http://snap.stanford.edu/data/cit-HepTh.html).
+   Use your function to calculate the PageRank of each node.
 
 2. Which paper has the highest pagerank?
 
-3. Check your results by using GraphLab's [pagerank](http://graphlab.com/products/create/docs/graphlab.toolkits.graph_analytics.html#pagerank).
+3. Check your results by using GraphLab's
+   [pagerank](http://graphlab.com/products/create/docs/graphlab.toolkits.graph_analytics.html#pagerank). (Graphlab should already be installed for you.)
+
    Do the results match?  Why might they not match?
