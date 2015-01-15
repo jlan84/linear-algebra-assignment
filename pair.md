@@ -42,10 +42,9 @@ For this exercise we will be working with a simple network of websites.
 In this model, we transition from one web page (state) to the next with
 equal probability (to begin).  Or rather we randomly pick an outgoing edge
 from our current state.  Before we can do any sort of calculation we need to
-know how we will move on this Markov Chain.
-
-**We will start off with a very explicit way of calculating our transitions using
-dictionaries and then we will see linear algebra can simplify the implmentation**.
+know how we will move on this Markov Chain. **We will start off with a very
+explicit way of calculating our transitions using dictionaries and then we
+will see linear algebra can simplify the implmentation**.
 
 ## Dictionary Implementation
 
@@ -91,7 +90,7 @@ dictionaries and then we will see linear algebra can simplify the implmentation*
    What is the page with the highest page rank (most probable to be on)?
 
 
-### Linear Algebra Implementation
+## Linear Algebra Implementation
 
 Hopefully the above process made you think of matrices! Often PageRank is
 formalized using linear algebra. In this alternative formulation the PageRank
