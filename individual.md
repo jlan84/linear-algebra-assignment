@@ -150,9 +150,9 @@ terms.
 
 1. Write a function to calculate projection of one vector onto another vector.
    Use this function to calculate the projections of every point
-   (using centered data) onto vector (1,1). Plot these projections along with
+   (using centered data) onto vector (1, 1). Plot these projections along with
     the actual data points.
 
 2. Now calculate the projections of all data points (using centered data) onto
-   the vector (-1,1). Plot these projections. H
+   the vector (-1, 1). Plot these projections. H
    How do these projections differ from the previous one.
