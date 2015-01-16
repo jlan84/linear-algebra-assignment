@@ -1,4 +1,4 @@
-### Part 1: Linear Algebra Practice: Markov Process
+## Part 1: Linear Algebra Practice: Markov Process
 
 Include your answers to thist part in `morning.md`.
 **Do not use a built-in function to answer the following.**
@@ -32,7 +32,7 @@ R (Residentially Used): 55%
    </div>
 
 
-### Part 2: Numpy performance
+## Part 2: Numpy performance
 
 Include your answers to thist part in `time_for_loop.py`.
 
@@ -62,7 +62,7 @@ There are a few ways to loop through a numpy array.
    If that implementation is not available, which one is my second choice?
 
 
-### Part 3: EDA of Fisher's Iris data
+## Part 3: EDA of Fisher's Iris data
 
 Include your answers to thist part in `iris.py`.
 
@@ -156,7 +156,7 @@ terms.
    </div>
 
 
-## Part 3: EDA of Fisher's Iris data (Extra Credit)
+## Part 4: EDA of Fisher's Iris data (Extra Credit)
 
 1. Write a function to calculate projection of one vector onto another vector.
    Use this function to calculate the projections of every point
