@@ -48,4 +48,9 @@ http://wiki.scipy.org/EricsBroadcastingDoc
 
 ### Apply along axis vs. vectorize
 
+### NaN
+
+```
+np.nan
+```
 
