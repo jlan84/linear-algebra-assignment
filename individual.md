@@ -131,7 +131,7 @@ terms.
 
 4. Write a function ` euclidean distance` to calculate the euclidean distance
    between two **column vectors (not row vector)**. Your function should check
-   if the vectors are column vectors and the shape of the two vectors being the same .
+   if the vectors are column vectors and the shape of the two vectors are the same .
 
    Use this to calculate the distance of every point in your data matrix
    from the mean vector. The shape of your result should be `(150, 1)`.
