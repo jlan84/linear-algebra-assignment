@@ -54,3 +54,16 @@ http://wiki.scipy.org/EricsBroadcastingDoc
 np.nan
 ```
 
+### np.sum vs sum
+
+### data types
+
+### any, all
+
+### np.dot vs a * B
+
+### complex numbers
+
+```
+6 + 7j
+```
