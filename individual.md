@@ -151,6 +151,11 @@ terms.
 
    Plot histogram of the cosine similarities.
 
+   <div align="center">
+    <img src="images/cos_hist.png">
+   </div>
+
+
 ## Part 3: EDA of Fisher's Iris data (Extra Credit)
 
 1. Write a function to calculate projection of one vector onto another vector.
