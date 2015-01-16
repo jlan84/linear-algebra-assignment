@@ -36,7 +36,7 @@ R (Residentially Used): 55%
 
 Include your answers to thist part in `time_for_loop.py`.
 
-There are a lot of ways to loop through a numpy array.
+There are a few ways to loop through a numpy array.
 
 1. Define a numpy array called `data` (see below). Use the `timeit`
    [module](https://docs.python.org/2/library/timeit.html) to time each of the
@@ -57,9 +57,9 @@ There are a lot of ways to loop through a numpy array.
        row_sums_3.append(b, sum(row))
    ```
 
-   Which is the fastest implementation? If that implementation is not available,
-   which one is my second choice? Think of when you will need the implementation
-   that performed the worst.
+   Which is the fastest implementation? You should always choose the fastest way to loop.
+   
+   If that implementation is not available, which one is my second choice? 
 
 
 ### Part 3: EDA of Fisher's Iris data
@@ -112,6 +112,7 @@ terms.
    ```python
    width = data[:, 0]
    length = data[:, 1]
+   # Plotting code
    ```
 
 2. Calculate the mean vector (column-wise) from the data matrix. You should
@@ -130,7 +131,7 @@ terms.
 
 4. Write a function ` euclidean distance` to calculate the euclidean distance
    between two **column vectors (not row vector)**. Your function should check
-   for the column vectors and the shape of the two vectors being the same .
+   if the vectors are column vectors and the shape of the two vectors are the same .
 
    Use this to calculate the distance of every point in your data matrix
    from the mean vector. The shape of your result should be `(150, 1)`.
