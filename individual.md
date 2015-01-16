@@ -58,8 +58,8 @@ There are a few ways to loop through a numpy array.
    ```
 
    Which is the fastest implementation? You should always choose the fastest way to loop.
-   
-   If that implementation is not available, which one is my second choice? 
+
+   If that implementation is not available, which one is my second choice?
 
 
 ### Part 3: EDA of Fisher's Iris data
@@ -137,6 +137,10 @@ terms.
    from the mean vector. The shape of your result should be `(150, 1)`.
 
    Plot a histogram of the euclidean distances.
+
+   <div align="center">
+    <img src="images/eucli_hist.png">
+   </div>
 
 5. Write a function to calculate the cosine similarity between two **column
    vectors (not row vector)**.
