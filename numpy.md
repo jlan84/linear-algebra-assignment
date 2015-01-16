@@ -1,6 +1,6 @@
 # Numpy
 
-DONT EVER USE A FOR LOPOPPOPPOPOOOOPP !!!!!!!
+Sometimes using a for loop can be faster....
 
 scipy is a library built on numpy.  so is pandas and scikit learn.  think of scipy as a bunch of functions defined in numpy.
 
