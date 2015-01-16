@@ -146,7 +146,7 @@ terms.
 
    Plot histogram of the cosine similarities.
 
-### Part 3: EDA of Fisher's Iris data (Extra Credit)
+## Part 3: EDA of Fisher's Iris data (Extra Credit)
 
 1. Write a function to calculate projection of one vector onto another vector.
    Use this function to calculate the projections of every point
