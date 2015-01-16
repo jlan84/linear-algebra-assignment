@@ -112,6 +112,7 @@ terms.
    ```python
    width = data[:, 0]
    length = data[:, 1]
+   # Plotting code
    ```
 
 2. Calculate the mean vector (column-wise) from the data matrix. You should
