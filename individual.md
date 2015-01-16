@@ -164,5 +164,5 @@ terms.
     the actual data points.
 
 2. Now calculate the projections of all data points (using centered data) onto
-   the vector (-1, 1). Plot these projections. H
-   How do these projections differ from the previous one.
+   the vector (-1, 1). Plot these projections. How do these projections differ
+   from the previous one.
