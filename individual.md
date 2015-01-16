@@ -36,7 +36,7 @@ R (Residentially Used): 55%
 
 Include your answers to thist part in `time_for_loop.py`.
 
-There are a lot of ways to loop through a numpy array.
+There are a few ways to loop through a numpy array.
 
 1. Define a numpy array called `data` (see below). Use the `timeit`
    [module](https://docs.python.org/2/library/timeit.html) to time each of the
