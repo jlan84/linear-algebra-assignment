@@ -1,7 +1,6 @@
-### Part 1: Markov Process
+### Part 1: Linear Algebra Practice: Markov Process
 
 Include your answers to thist part in `morning.md`.
-
 **Do not use a built-in function to answer the following.**
 
 The stochastic matrix is central to the Markov process. It is a sqaure matrix
@@ -129,29 +128,31 @@ terms.
 3. Obtain mean-centered data by subtracting mean vector from each data point.
    Check that the `shape` is `(150, 2)`.
 
-4. Write a function to calculate the euclidean distance between two **column
-   vectors (not row vector)**. Your function should return a single number.
+4. Write a function ` euclidean distance` to calculate the euclidean distance
+   between two **column vectors (not row vector)**. Your function should check
+   for the column vectors and the shape of the two vectors being the same .
 
    Use this to calculate the distance of every point in your data matrix
-   from the mean vector. Use `np.apply_along_axis()`. The shape of your result
-   should be `(150, 1)`.
+   from the mean vector. The shape of your result should be `(150, 1)`.
 
    Plot a histogram of the euclidean distances.
 
 5. Write a function to calculate the cosine similarity between two **column
-   vectors (not row vector)**. Your function should return a single number.
+   vectors (not row vector)**.
 
    Use this to calculate the cosine similarity of every point in your data
-   matrix from the mean vector. Use `np.apply_along_axis()`. The shape of your result
+   matrix from the mean vector. The shape of your result
    should be `(150, 1)`.
 
    Plot histogram of the cosine similarities.
-
 
 ### Part 3: EDA of Fisher's Iris data (Extra Credit)
 
 1. Write a function to calculate projection of one vector onto another vector.
    Use this function to calculate the projections of every point
-   (using centered data) onto vector (1,1). Plot these projections along with the actual data points.
+   (using centered data) onto vector (1,1). Plot these projections along with
+    the actual data points.
 
-2. Now calculate the projections of all data points (using centered data) onto the vector (-1,1). Plot these projections. How do these projections differ from the previous one.
+2. Now calculate the projections of all data points (using centered data) onto
+   the vector (-1,1). Plot these projections. H
+   How do these projections differ from the previous one.
