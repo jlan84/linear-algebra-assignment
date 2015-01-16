@@ -57,9 +57,9 @@ There are a few ways to loop through a numpy array.
        row_sums_3.append(b, sum(row))
    ```
 
-   Which is the fastest implementation? If that implementation is not available,
-   which one is my second choice? Think of when you will need the implementation
-   that performed the worst.
+   Which is the fastest implementation? You should always choose the fastest way to loop.
+   
+   If that implementation is not available, which one is my second choice? 
 
 
 ### Part 3: EDA of Fisher's Iris data
