@@ -46,7 +46,7 @@ know how we will move on this Markov Chain. **We will start off with a very
 explicit way of calculating our transitions using dictionaries and then we
 will see linear algebra can simplify the implmentation**.
 
-## Part 3: Dictionary Implementation
+### Part 2.1: Dictionary Implementation
 
 1. Create a dictionary representing **the image above** and the transitions
    between its nodes. Each key in this dictionary will correspond to a
@@ -90,7 +90,7 @@ will see linear algebra can simplify the implmentation**.
    What is the page with the highest page rank (most probable to be on)?
 
 
-## Part 4: Linear Algebra Implementation
+### Part 2.2: Linear Algebra Implementation
 
 Hopefully the above process made you think of matrices! Often PageRank is
 formalized using linear algebra. In this alternative formulation the PageRank
@@ -128,7 +128,7 @@ corresponds to the principal eigenvector (largest) of the transition matrix.
    stationary distibution (page rank).  Is it the same as what you found
    from above?  What is it's eigenvalue?
 
-## Part 5: Extra Credit (More PageRank)
+## Part 3: Extra Credit (More PageRank)
 
 ### A real web
 
