@@ -52,14 +52,14 @@ There are a lot of ways to loop through a numpy array.
    row_sums_2 = np.apply_along_axis(sum, 1, data)
 
    # Implementation 3
-   b = []
+   row_sums_3 = np.array([])
    for row in data:
-       b.append(sum(row))
-   b = np.array(b, ndmin=2) # Make the array at least 2 dimensional
+       row_sums_3.append(b, sum(row))
    ```
 
    Which is the fastest implementation? If that implementation is not available,
-   which one is my second choice?
+   which one is my second choice? Think of when you will need the implementation
+   that performed the worst.
 
 
 ### Part 3: EDA of Fisher's Iris data
