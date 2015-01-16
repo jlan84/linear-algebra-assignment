@@ -54,7 +54,7 @@ There are a few ways to loop through a numpy array.
    # Implementation 3
    row_sums_3 = np.array([])
    for row in data:
-       row_sums_3.append(row_sums_3, sum(row))
+       np.append(row_sums_3, sum(row))
    ```
 
    Which is the fastest implementation? You should always choose the fastest way to loop.
