@@ -1,35 +1,73 @@
-#Linear Algebra
+### Part 1: Markov Process
 
-First part of this exercise gives you some practice of matrix multiplication.
+Include your answers to thist part in `morning.md`.
 
-### Part 1: Markov Process, Stochastic Matrix
+**Do not use a built-in function to answer the following.**
 
-Suppose that the 2004 **state of land use** in a city of 60 mi^2 of built-up area is
+The stochastic matrix is central to the Markov process. It is a sqaure matrix
+specifying that probabilities of going from one state to the other. Every column
+of the matrix sums to 1.
 
-C: Commercially Used 25%
-I: Industrially Used 20%
-R: Residentially Used 55%
+The probability of entering a certain state depends only on the last state
+occupied and the stochastic matrix, not on any earlier states
 
-1. Find the **state of land use** in 2009 and 2014, assuming that the transition
-   probabilities for 5-year intervals are given by the matrix **A** and
-   remain practically the same over the time considered.
+<br>
+
+Suppose that the 2004 **state of land use** in a city of 60 mi^2 of built-up
+area is
+
+```
+In 2004:
+
+C (Commercially Used): 25%
+I (Industrially Used): 20%
+R (Residentially Used): 55%
+```
+
+1. Find the **state of land use** in **2009** and **2014**,
+   assuming that the transition probabilities for 5-year intervals are given
+   by the matrix **A** and remain practically the same over the time considered.
 
    <div align="center">
     <img src="images/transition_matix_A.png">
    </div>
 
-**Note:**
-- _A_ is a stochastic matrix, that is, a square matrix with all entries
- nonnegative and all  column sums equal to 1.
 
-- Our example concerns a Markov process, for which the probability of entering
-  a certain state depends only on the last state occupied (and the matrix A),
-  not on any earlier state
+### Part 2: Numpy performance
+
+Include your answers to thist part in `time_for_loop.py`.
+
+There are a lot of ways to loop through a numpy array.
+
+1. Define a numpy array called `data` (see below). Use the `timeit`
+   [module](https://docs.python.org/2/library/timeit.html) to time each of the
+   following implementation to obtain the sum of each of the rows.
+
+   ```python
+   data = np.ones((150, 150))
+
+   # Implementation 1
+   row_sums_1 = np.sum(data, axis=1)
+
+   # Implementation 2
+   row_sums_2 = np.apply_along_axis(sum, 1, data)
+
+   # Implementation 3
+   b = []
+   for row in data:
+       b.append(sum(row))
+   b = np.array(b, ndmin=2) # Make the array at least 2 dimensional
+   ```
+
+   Which is the fastest implementation? If that implementation is not available,
+   which one is my second choice?
 
 
-### Part 2: EDA of Fisher's Iris data
+### Part 3: EDA of Fisher's Iris data
 
-**IMPORTANT NOTE:**
+Include your answers to thist part in `iris.py`.
+
+**NUMPY NOTES:**
 
 In numpy array, the **row vector** is defined as:
 
@@ -46,14 +84,14 @@ The shape of `b` is `(3, 1)`.
 
 Check the `shape` of all the vectors throughout the exercise.
 If the shape is missing a value, i.e. `(3,)` or  `(,3)`, use `reshape()` to
-restore the correct dimensions.
+restore the correct dimensions, e.g. `arr.reshape((1, 3))`.
 
-_**Do not** use a for loop at any point of the exercise_.
+<br>
 
 Here we will be exploring the Fisher's Iris data set. A lot of the
 functions / operations are things you are already familiar with, such as
 **mean** and **sum**. But we will frame those operations in linear algebra
-terms. Linear algebra is done in python using the `numpy` library.
+terms.
 
 
 1. Read the `data/iris.txt` into a pandas dataframe. Select the
