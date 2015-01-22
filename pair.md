@@ -85,7 +85,7 @@ will see linear algebra can simplify the implmentation**.
    a function to normalize the probabilities to make the sum of all probabilities
    1.**
 
-5. How many iterations did it take to reach stationary distribution?
+5. How many iterations did it take to reach stationary distribution? Eyeball it.
 
    What is the page with the highest page rank (most probable to be on)?
 
