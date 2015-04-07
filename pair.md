@@ -54,6 +54,8 @@ Using the fitted model above, answer the following questions
      you can easily refer back to the points with large residuals 
      (`> 2` or `< -2`)**
    
+   <br>
+   
    <div align="center" width="200px">
       <img src="images/plotly_resid.png">
    </div>
