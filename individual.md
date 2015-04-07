@@ -42,7 +42,9 @@ R (Residentially Used): 55%
    <div align="center">
       <img src="images/transition_matix_A.png">
    </div>
-
+   
+   
+<br>
 <br>
 
 This following question uses the `iris` dataset. Load the data in with the following code.
