@@ -1,72 +1,8 @@
-## Part 1: Linear Algebra Practice: Markov Process
+Include your answers to this part in `morning.py`.
 
-Include your answers to thist part in `morning.md`.
-**Do not use a built-in function to answer the following.**
+**Please use numpy vector/matrix operations. Do not use a for loop unless given explicit instructions**
 
-The stochastic matrix is central to the Markov process. It is a sqaure matrix
-specifying that probabilities of going from one state to the other. Every column
-of the matrix sums to 1.
-
-The probability of entering a certain state depends only on the last state
-occupied and the stochastic matrix, not on any earlier states
-
-<br>
-
-Suppose that the 2004 **state of land use** in a city of 60 mi^2 of built-up
-area is
-
-```
-In 2004:
-
-C (Commercially Used): 25%
-I (Industrially Used): 20%
-R (Residentially Used): 55%
-```
-
-1. Find the **state of land use** in **2009** and **2014**,
-   assuming that the transition probabilities for 5-year intervals are given
-   by the matrix **A** and remain practically the same over the time considered.
-
-   <div align="center">
-    <img src="images/transition_matix_A.png">
-   </div>
-
-
-## Part 2: Numpy performance
-
-Include your answers to thist part in `time_for_loop.py`.
-
-There are a few ways to loop through a numpy array.
-
-1. Define a numpy array called `data` (see below). Use the `timeit`
-   [module](https://docs.python.org/2/library/timeit.html) to time each of the
-   following implementation to obtain the sum of each of the rows.
-
-   ```python
-   data = np.ones((150, 150))
-
-   # Implementation 1
-   row_sums_1 = np.sum(data, axis=1)
-
-   # Implementation 2
-   row_sums_2 = np.apply_along_axis(sum, 1, data)
-
-   # Implementation 3
-   row_sums_3 = np.array([])
-   for row in data:
-       row_sums_3 = np.append(row_sums_3, sum(row))
-   ```
-
-   Which is the fastest implementation? You should always choose the fastest way to loop.
-
-   If that implementation is not available, which one is my second choice?
-
-
-## Part 3: EDA of Fisher's Iris data
-
-Include your answers to thist part in `iris.py`.
-
-**NUMPY NOTES:**
+**Please read the following notes about numpy before starting:**
 
 In numpy array, the **row vector** is defined as:
 
@@ -82,78 +18,85 @@ b = np.array([[1], [2], [3]])
 The shape of `b` is `(3, 1)`.
 
 Check the `shape` of all the vectors throughout the exercise.
-If the shape is missing a value, i.e. `(3,)` or  `(,3)`, use `reshape()` to
-restore the correct dimensions, e.g. `arr.reshape((1, 3))`.
-
-<br>
-
-Here we will be exploring the Fisher's Iris data set. A lot of the
-functions / operations are things you are already familiar with, such as
-**mean** and **sum**. But we will frame those operations in linear algebra
-terms.
+If the shape is missing a value, i.e. `(3,)` or  `(,3)`, use `np.newaxis` to
+restore the correct dimensions
 
 
-1. Read the `data/iris.txt` into a pandas dataframe. Select the
-   columns `SepalWidth` and `SepalLength` and export them to a numpy array.
-   **Remember which column is width / length. Exporting to numpy gets rid of
-   the name of the column.**
+## Part 1: Linear Algebra Practice:
 
-   ```python
-   import pandas as pd
-   iris = pd.read_csv('data/iris.txt')
+A. Suppose that the 2004 **state of land use** in a city of 60 mi^2 of built-up
+   area is
 
-   # Export into a numpy object
-   data = iris[['SepalWidth', 'SepalLength']].as_matrix()
-
-   data.shape   #Output: (150, 2)
    ```
-   Make a scatter plot of sepal width vs sepal length.
-
-   ```python
-   width = data[:, 0]
-   length = data[:, 1]
-   # Plotting code
+   In 2004:
+   
+   C (Commercially Used): 25%
+   I (Industrially Used): 20%
+   R (Residentially Used): 55%
    ```
 
-2. Calculate the mean vector (column-wise) from the data matrix. You should
-   get a `shape` of `(1, 2)`.
+   1. Find the **state of land use** in **2009** and **2014**,
+      assuming that the transition probabilities for 5-year intervals are given
+      by the matrix **A** and remain practically the same over the time considered.
+   
+      <div align="center">
+         <img src="images/transition_matix_A.png">
+      </div>
 
+B. This question uses the `iris` dataset. Load the data in with the following code.
+   
+   ```python
+   from sklearn import datasets
+   # The 1st column is sepal length and the 2nd column is sepal width
+   sepalLength_sepalWidth = datasets.load_iris().data[:, :2]
+   ```
+  
+   1. Make a scatter plot of sepal width vs sepal length
+  
+   2. Compute the mean vector (column-wise) of the data matrix. The `shape`
+      of the mean vector should be `(1, 2)`
+     
+      Plot the mean vector on the scatter plot in `1.` 
 
-   Plot the vector (point) to show where the mean `SepalWidth` and mean
-   `SepalLength` is.
+      <div align="center">
+       <img src="images/mean.png">
+      </div>
 
-   <div align="center">
-    <img src="images/mean.png">
-   </div>
+   3. Write a function (`euclidean_dist`) to calculate the euclidean distance
+      between two **column vectors (not row vector)**. Your function should check
+      if the vectors are column vectors and the shape of the two vectors are the same .
 
-3. Obtain mean-centered data by subtracting mean vector from each data point.
-   Check that the `shape` is `(150, 2)`.
+   4. Write a function (`cosine_sim`) to calculate the cosine similarity_between 
+      two **column vectors (not row vector)**.
+   
+   5. Write a function that would loop through all the data points in a given matrix and 
+      calculate the given distance metric between each of the data point and the mean
+      vector. **A for loop is allowed here**
+      
+      **Input of the function:**
+         - Data matrix as an ndarray
+         - Function to compute distance metric (Euclidean / Cosine Similarity)
+      
+      **Output of the function:**
+         - An array shaped `(150, 1)`
+      
+      Use the function to compute Euclidean Distance and Cosine Similarity between each of
+      the data points and the mean of the data points. You should be able to call the function
+      in this manner:
 
-4. Write a function ` euclidean distance` to calculate the euclidean distance
-   between two **column vectors (not row vector)**. Your function should check
-   if the vectors are column vectors and the shape of the two vectors are the same .
+      ```python
+      euclidean_dists = compute_dist(sepalLength_sepalWidth, euclidean_dist)
+      cosine_sims = compute_dist(sepalLength_sepalWidth, cosine_sim)
+      ```
+   6. Plot a histogram of the euclidean distances and cosine similarities.
+   
+      <div align="center">
+       <img src="images/eucli_hist.png">
+      </div>
 
-   Use this to calculate the distance of every point in your data matrix
-   from the mean vector. The shape of your result should be `(150, 1)`.
-
-   Plot a histogram of the euclidean distances.
-
-   <div align="center">
-    <img src="images/eucli_hist.png">
-   </div>
-
-5. Write a function to calculate the cosine similarity between two **column
-   vectors (not row vector)**.
-
-   Use this to calculate the cosine similarity of every point in your data
-   matrix from the mean vector. The shape of your result
-   should be `(150, 1)`.
-
-   Plot histogram of the cosine similarities.
-
-   <div align="center">
-    <img src="images/cos_hist.png">
-   </div>
+      <div align="center">
+       <img src="images/cos_hist.png">
+      </div>
 
 
 ## Part 4: EDA of Fisher's Iris data (Extra Credit)
