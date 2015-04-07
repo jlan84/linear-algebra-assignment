@@ -47,7 +47,7 @@ The linear regression model makes a number of assumptions about the data, includ
 - **Homoscedasticity of residuals**
 - **Normal distribution of residual**
 - **Lack of mutlicollinearity between features**
-- **Lack of autocorrelation (if the data is a time series)
+- **Lack of autocorrelation (if the data is a time series)**
 
 Since the results of the regression model depend on these statistical assumptions, the 
 results are only correct of our assumptions hold (at least approximately).
@@ -63,7 +63,7 @@ Using the fitted model above with the prestige data, answer the following questi
 3. Multicollinearity: VIF
 
 
-### Part 2: Interpreting the residuals 
+## Part 2: Interpreting the residuals 
 
 1. Plot the fitted y values against the studendized residuals 
    (residual divided by standard deviation of residuals). 
@@ -86,6 +86,6 @@ Using the fitted model above with the prestige data, answer the following questi
 3. Influence plot
 
 
-### Part 3: Partial Regression Plot and Partial Residual Plot
+## Part 3: Partial Regression Plot and Partial Residual Plot
 
 1. 
