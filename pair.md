@@ -20,7 +20,7 @@ solving the normal equation.
    **Hint:**
    - **The features (x) should be scaled (centered by mean and divided by standard deviation)**
    - **After scaling, append a column of 1's to the feature matrix (x),
-     so an intercept can be fitted. Use  `add_constant` in statsmodels**
+     so an intercept can be fitted.**
 
 
 2. Using numpy, write a function that solves the **normal equation** (below).
@@ -60,13 +60,27 @@ Using the fitted model above with the prestige data, answer the following questi
 2. Use the **Jarque-Bera/Omnibus** test (included in model summary) to assert to the 
    normality of the residuals. 
      
-3. Multicollinearity: VIF
-
-
+3. Use the **Condition Number** (included in model summary) to assert the lack of multicollinerity.
+   As a rule of thumb, a condition number > 30 indicates multicollinearity between the features.
+   
+   Furthermore, we can use the **Variance Inflation Factor (VIF)** 
+   (`sm.stats.outliers_influence.variance_inflation_factor`) to measure how collinear a particular 
+   feature is with the rest of the features. As a rule of thumb, a VIF > 10 indicates the feature is
+   collinear with at least another feature.
+   
+   **Hint:**
+   - `variance_inflation_factor` takes a matrix of features and the column index of the feature the VIF
+     is to be calculated
+   - Write a function that loops through and calculate VIF for all the features
+   
 ## Part 2: Interpreting the residuals 
 
-1. Plot the fitted y values against the studendized residuals 
-   (residual divided by standard deviation of residuals). 
+1. Plot studendized residuals (residual divided by standard deviation of residuals)
+   on the y axis and each of the following as the x:
+   
+   - Fitted y value (`Plot A`)
+   - Income (`Plot B`)
+   - Education (`Plot C`)
    
    **Hint:** 
    - **Use `summary.resid` and `summary.fittedvalues` to get the 
@@ -74,6 +88,7 @@ Using the fitted model above with the prestige data, answer the following questi
    - **Use `plotly` to make the plot so the points will be labeled and 
      you can easily refer back to the points with large residuals 
      (`> 2` or `< -2`)**
+    - **Below is fitted y values plotted against studendized residuals**
    
    <br>
    
