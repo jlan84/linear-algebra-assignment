@@ -1,4 +1,4 @@
-Include your answers to this part in `morning.py`.
+Include your answers to this morning's exercies in `morning.py`.
 
 **Please use numpy vector/matrix operations. Do not use a for loop unless given explicit instructions**
 
@@ -101,11 +101,11 @@ sepalLength_sepalWidth = datasets.load_iris().data[:, :2]
    </div>
 
 
-## Part 2 (Extra Credit): Linear Algebra Implementation of the PageRank Algorithm
+## Extra Credit: PageRank Algorithm
 
 The [Page Rank Algorithm](http://en.wikipedia.org/wiki/PageRank) is used by Google
-Search (in their early days) to rank websites in their search engine results to determine
-the importances of webpages. 
+Search (in their early days) to rank websites in their search engine in terms 
+of the importance of webpages. 
 [More about PageRank](http://books.google.com/books/p/princeton?id=5o_K4rri1CsC&printsec=frontcover&source=gbs_ViewAPI&hl=en#v=onepage&q&f=false)
 
 We will implement PageRank on this simple network of websites.
@@ -126,7 +126,7 @@ from our current state.  Before we can do any sort of calculation we need to
 know how we will move on this Markov Chain.
 
 1. Create an `numpy ndarray` representing the transition probabilities between
-   nodes for **the above network**. The position _i_, _j_ in the matrix corresponds to the
+   nodes for **the above network (in the image)**. The position _i_, _j_ in the matrix corresponds to the
    probability of going from node _i_ to node _j_.
 
 2. Now that we have a transition matrix, the next step is to iterate on this
