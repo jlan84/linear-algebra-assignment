@@ -101,7 +101,7 @@ sepalLength_sepalWidth = datasets.load_iris().data[:, :2]
    </div>
 
 
-## Extra Credit: PageRank Algorithm
+## Extra Credit: Implementing the PageRank Algorithm
 
 The [Page Rank Algorithm](http://en.wikipedia.org/wiki/PageRank) is used by Google
 Search (in their early days) to rank websites in their search engine in terms 
