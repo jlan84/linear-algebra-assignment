@@ -18,14 +18,14 @@ solving the normal equation.
    ```
    
    **Hint:**
-   - The features (x) should be scaled (centered by mean and divided by standard deviation)
-   - After scaling, append a column of 1's to the feature matrix (x),
-     so an intercept can be fitted. Use  `add_constant` in statsmodels
+   - **The features (x) should be scaled (centered by mean and divided by standard deviation)**
+   - **After scaling, append a column of 1's to the feature matrix (x),
+     so an intercept can be fitted. Use  `add_constant` in statsmodels**
 
 
 2. Using numpy, write a function that solves the **normal equation** (below).
-   As input your function should take a matrix of features (x) and
-   a vector of target (y). You should return a vector of beta coefficients 
+   As input your function should take a matrix of features (**x**) and
+   a vector of target (**y**). You should return a vector of beta coefficients 
    that represent the line of best fit. Calculate  R<sup>2</sup>. 
    
    <div align="center">
@@ -48,11 +48,11 @@ Using the fitted model above, answer the following questions
    (residual divided by standard deviation of residuals). 
    
    **Hint:** 
-   - Use `summary.resid` and `summary.fittedvalues` to get the 
-     residuals and the fitted y values
-   - Use `plotly` to make the plot so the points will be labeled and 
+   - **Use `summary.resid` and `summary.fittedvalues` to get the 
+     residuals and the fitted y values**
+   - **Use `plotly` to make the plot so the points will be labeled and 
      you can easily refer back to the points with large residuals 
-     (`> 2` or `< -2`) 
+     (`> 2` or `< -2`)**
    
    <div align="center">
       <img src="images/plotly_resid.png">
