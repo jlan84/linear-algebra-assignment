@@ -2,7 +2,7 @@ Include your answers to this part in `morning.py`.
 
 **Please use numpy vector/matrix operations. Do not use a for loop unless given explicit instructions**
 
-**Please read the following notes about numpy before starting:**
+## Part 0: Important Numpy Notes:
 
 In numpy array, the **row vector** is defined as:
 
@@ -24,7 +24,7 @@ restore the correct dimensions
 
 ## Part 1: Linear Algebra Practice:
 
-A. Suppose that the 2004 **state of land use** in a city of 60 mi^2 of built-up
+- Suppose that the 2004 **state of land use** in a city of 60 mi^2 of built-up
    area is
 
    ```
@@ -43,7 +43,7 @@ A. Suppose that the 2004 **state of land use** in a city of 60 mi^2 of built-up
          <img src="images/transition_matix_A.png">
       </div>
 
-B. This question uses the `iris` dataset. Load the data in with the following code.
+- This question uses the `iris` dataset. Load the data in with the following code.
    
    ```python
    from sklearn import datasets
@@ -88,7 +88,7 @@ B. This question uses the `iris` dataset. Load the data in with the following co
       euclidean_dists = compute_dist(sepalLength_sepalWidth, euclidean_dist)
       cosine_sims = compute_dist(sepalLength_sepalWidth, cosine_sim)
       ```
-   6. Plot a histogram of the euclidean distances and cosine similarities.
+   6. Plot histograms of the euclidean distances and cosine similarities.
    
       <div align="center">
        <img src="images/eucli_hist.png">
@@ -99,7 +99,7 @@ B. This question uses the `iris` dataset. Load the data in with the following co
       </div>
 
 
-## Part 4: EDA of Fisher's Iris data (Extra Credit)
+## Part 2: Markov
 
 1. Write a function to calculate projection of one vector onto another vector.
    Use this function to calculate the projections of every point
