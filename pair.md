@@ -56,8 +56,8 @@ Using the fitted model above, answer the following questions
    
    <br>
    
-   <div align="center" width="200px">
-      <img src="images/plotly_resid.png">
+   <div align="center">
+      <img width="200" src="images/plotly_resid.png">
    </div>
 
 2. Identify the points with large residuals (more than 2 standard deviations).
