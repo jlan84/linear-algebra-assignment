@@ -1,6 +1,8 @@
 Include your answers to this morning's exercies in `morning.py`.
 
-**Please use numpy vector/matrix operations. Do not use a for loop unless given explicit instructions**
+This morning we will revisit some linear algebra using the numpy library in python. 
+
+**For the following exercises, use numpy vector/matrix operations. Do not use a for loop unless given explicit instructions**
 
 ## Part 0: Important Numpy Notes:
 
