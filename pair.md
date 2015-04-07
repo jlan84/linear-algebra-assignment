@@ -26,7 +26,8 @@ solving the normal equation.
 2. Using numpy, write a function that solves the **normal equation** (below).
    As input your function should take a matrix of features (**x**) and
    a vector of target (**y**). You should return a vector of beta coefficients 
-   that represent the line of best fit. Calculate  R<sup>2</sup>. 
+   that represent the line of best fit which minimizes the residual. 
+   Calculate  R<sup>2</sup>. 
    
    <div align="center">
       <img height="30" src="images/normal_equation.png">
@@ -39,12 +40,32 @@ solving the normal equation.
    summary = model.summary()
    ```
 
-## Part 1: Interpreting a Linear Regression Model
+## Part 1: Linear Regression Diagnosis
 
-Using the fitted model above, answer the following questions
+The linear regression model makes a number of assumptions about the data, including 
 
-1. The linear regression model assumes normality and homoscedasticity of the
-   residuals. Plot the fitted y values against the studendized residuals 
+- **Homoscedasticity of residuals**
+- **Normal distribution of residual**
+- **Lack of mutlicollinearity between features**
+- **Lack of autocorrelation (if the data is a time series)
+
+Since the results of the regression model depend on these statistical assumptions, the 
+results are only correct of our assumptions hold (at least approximately).
+
+Using the fitted model above with the prestige data, answer the following questions
+
+1. Use the **Goldfeld-Quandt** test (`sm.stats.diagnostic.het_goldfeldquandt`) to 
+   assert the homoscedasticity of the residuals
+
+2. Use the **Jarque-Bera/Omnibus** test (included in model summary) to assert to the 
+   normality of the residuals. 
+     
+3. Multicollinearity: VIF
+
+
+### Part 2: Interpreting the residuals 
+
+1. Plot the fitted y values against the studendized residuals 
    (residual divided by standard deviation of residuals). 
    
    **Hint:** 
@@ -62,10 +83,9 @@ Using the fitted model above, answer the following questions
 
 2. Identify the points with large residuals (more than 2 standard deviations).
 
-   Verify the assumptions of linear regression using the following tests:
-   
-   - Use the Goldfeld-Quandt test (`sm.stats.diagnostic.het_goldfeldquandt`) to 
-     assert the homoscedasticity of the residuals
-   - Use the Jarque-Bera/Omnibus test (included in model summary) to assert to the 
-     normality of the residuals. 
+3. Influence plot
 
+
+### Part 3: Partial Regression Plot and Partial Residual Plot
+
+1. 
