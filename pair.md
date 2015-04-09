@@ -115,12 +115,19 @@ the prediction by the model deviates much from the actual value.
    you observe in beta coefficients of the new model 
 
 
-## Part 4: Partial Regression Plot and Partial Residual Plot
+## Part 4: Partial Regression Plots and CCPR Plots
 
-**Partial Regression Plots** are useful for exploring the relationship between an individual feature
-and the response variable conditioned on the other features. Compared to partial regression plots, 
-univariate plots can be misleading in describing the relationship between an individual feature and 
-the response variable.
+**Partial Regression Plots** indicates the strength of the linear relationship between an individual
+feature and the response variable conditioned on rest of features in the model. Partial regression plots 
+are also used to identify data points with high leverage and influential data points that might not have
+high leverage.
 
-1. Using `sm.graphics.plot_partregress` in `statsmodels`, make partial regression plots for income and
+**Component-Component plus Residual (CCPR) Plots** indicates the nature of the relationship between
+an individual feature and the response variable. They are useful in determining if a polynomial term is
+neccessary for a given feature.
+
+1. Use `sm.graphics.plot_partregress` to make partial regression plots for income and
+   education. 
+   
+2. Use `sm.graphics.plot_ccpr` to make Component-Component plus Residual plots for income and
    education. 
