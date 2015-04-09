@@ -106,7 +106,7 @@ the prediction by the model deviates much from the actual value.
    [leverage](http://en.wikipedia.org/wiki/Cook%27s_distance) are influential and should be treated 
    with caution.
    
-   Plot the Influence Plot (`sm.graphics.influence_plot`) and identify the influential points
+   Plot the **Influence Plot** (`sm.graphics.influence_plot`) and identify the influential points
    
 4. Remove the influential points identified in `3.` and re-fit the model. Describe the differences 
    you observe in beta coefficients of the new model 
