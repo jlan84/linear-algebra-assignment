@@ -73,14 +73,16 @@ Using the fitted model above with the prestige data, answer the following questi
      is to be calculated
    - Write a function that loops through and calculate VIF for all the features
    
-## Part 2: Interpreting the residuals 
+## Part 2: Interpreting beta coefficients
 
-1. Plot studendized residuals (residual divided by standard deviation of residuals)
-   on the y axis and each of the following as the x:
+1. Examine and interpret the beta coefficients of income and education of the model 
    
-   - Fitted y value (`Plot A`)
-   - Income (`Plot B`)
-   - Education (`Plot C`)
+## Part 3: Interpreting the residuals 
+
+Plotting the residuals allows you identify outliers which represents data points where
+the prediction by the model deviates much from the actual value.
+
+1. Plot the fitted y value against studendized residuals (residual divided by standard deviation of residuals)
    
    **Hint:** 
    - **Use `summary.resid` and `summary.fittedvalues` to get the 
@@ -88,7 +90,6 @@ Using the fitted model above with the prestige data, answer the following questi
    - **Use `plotly` to make the plot so the points will be labeled and 
      you can easily refer back to the points with large residuals 
      (`> 2` or `< -2`)**
-    - **Below is fitted y values plotted against studendized residuals**
    
    <br>
    
@@ -97,10 +98,20 @@ Using the fitted model above with the prestige data, answer the following questi
    </div>
 
 2. Identify the points with large residuals (more than 2 standard deviations).
+   Plot **income against studendized residuals** and **education against studendized residuals**
+   and explain outliers in terms of income and education.
+   
+3. In addition to residuals, the measure of influence indicates how much effect a data point has on
+   the model (i.e. flutuations in beta coefficients). Outliers with large residuals and large 
+   [leverage](http://en.wikipedia.org/wiki/Cook%27s_distance) are influential and should be treated 
+   with caution.
+   
+   Plot the Influence Plot (`sm.graphics.influence_plot`) and identify the influential points
+   
+4. Remove the influential points identified in `3.` and re-fit the model. Describe the differences 
+   you observe in beta coefficients of the new model 
 
-3. Influence plot
 
-
-## Part 3: Partial Regression Plot and Partial Residual Plot
+## Part 4: Partial Regression Plot and Partial Residual Plot
 
 1. 
