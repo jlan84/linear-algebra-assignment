@@ -78,7 +78,7 @@ Using the fitted model above with the prestige data, answer the following questi
 1. Examine and interpret the beta coefficients of income and education of the model. Are the effects 
    statisitcally significant?
 
-2. 
+2. Explain and interpret what the R<sup>2</sup> and adjusted R<sup>2</sup> indiciate. 
    
 ## Part 3: Interpreting the residuals 
 
@@ -117,9 +117,10 @@ the prediction by the model deviates much from the actual value.
 
 ## Part 4: Partial Regression Plot and Partial Residual Plot
 
-1. **Partial Regression Plots** are useful for exploring the relationship between the features and the
-   target, 
-   partial regression plots are dependent variable and independent variables conditional on the other 
-   independent variables
+**Partial Regression Plots** are useful for exploring the relationship between an individual feature
+and the response variable conditioned on the other features. Compared to partial regression plots, 
+univariate plots can be misleading in describing the relationship between an individual feature and 
+the response variable.
 
-2. 
+1. Using `sm.graphics.plot_partregress` in `statsmodels`, make partial regression plots for income and
+   education. 
