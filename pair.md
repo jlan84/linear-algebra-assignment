@@ -73,9 +73,12 @@ Using the fitted model above with the prestige data, answer the following questi
      is to be calculated
    - Write a function that loops through and calculate VIF for all the features
    
-## Part 2: Interpreting beta coefficients
+## Part 2: Interpreting coefficients and model fit
 
-1. Examine and interpret the beta coefficients of income and education of the model 
+1. Examine and interpret the beta coefficients of income and education of the model. Are the effects 
+   statisitcally significant?
+
+2. 
    
 ## Part 3: Interpreting the residuals 
 
@@ -114,4 +117,9 @@ the prediction by the model deviates much from the actual value.
 
 ## Part 4: Partial Regression Plot and Partial Residual Plot
 
-1. 
+1. **Partial Regression Plots** are useful for exploring the relationship between the features and the
+   target, 
+   partial regression plots are dependent variable and independent variables conditional on the other 
+   independent variables
+
+2. 
