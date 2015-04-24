@@ -3,37 +3,35 @@ Include your answer in `afternoon_answer.md`
 ##Part 0: Exploratory Data Analysis (EDA)
 
 EDA is a crucial step in the process of building a predictive model. EDA helps you understand the characteristics
-of your data and the relationships between your variables through visualizing and summarizing your data. 
+of your data and the relationships between your variables through visualizing and summarizing your data. Here we 
+will walk through an example of doing so.
 
 <br>
  
 In this scenario, you are a data scientist at [Bay Area Bike Share](http://www.bayareabikeshare.com/). You are
 interested in understanding the factors that drives bike sharing activity so you can better inform the marketing 
-team about advertisement strategies. You are given 2 csv files: `201402_trip_data.csv` and `201402_weather_data.csv`.
+team about advertisement strategies. You are given 2 csv files:  and `201402_weather_data.csv`.
 
 
+1. Load the CSV file `201402_trip_data.csv` into a dataframe. Explore the user activity of at each hour of the day
+   on average over the 7 month period the data spans. 
+   
+   **Below are some guidelines you can follow:**
+   - Make the `Start Time` column a datetime column using the `parse_dates` argument in the `pd.read_csv` function 
+   - Since we are interested in activity by the hour, create columns which are the `date` and `hour` of the `Start Time`
+   - Groupby `date` and `hour` and count the number of users in an hour on a specific date
+   - Groupby `hour` only to get all the variations of user activity for a given hour over all the dates 
+   
+2. Make a [boxplot](http://blog.bharatbhole.com/creating-boxplots-with-matplotlib/) of the hours in the day against 
+   the number of users in that given hour. 
+   
+   Someone from the analytics team made a line plot (right) that he claims is showing the same information as your
+   boxplot (left). Why is that not true in general? Describe the insight you have gain from your plot. Is there
+   anything on the plot that you deem worthy of further investigation?
+   
+   ![image](images/q1_pair.png)
 
-Interested in the ride activity
-- with weather
-- with time of the day
-- with day of the week
-- 
-
-1. 
-
-
-
-As mentioned in Chapter 1, exploratory data analysis or “EDA” is a critical
-first step in analyzing the data from an experiment. Here are the main reasons we
-use EDA:
-• detection of mistakes
-• checking of assumptions
-• preliminary selection of appropriate models
-• determining relationships among the explanatory variables, and
-• assessing the direction and rough size of relationships between explanatory
-and outcome variables.
-
-
+3. 
 
 ## Data Exploration and Graphing
 You will be exploring and graphing data from the Bay Area Bike Share. Download the data and review it well enough to understand the contents.  The data directory contains a README with further explanation.
