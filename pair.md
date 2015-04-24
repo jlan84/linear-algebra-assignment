@@ -35,89 +35,11 @@ team about its advertisement strategies.
    ![image](images/q1_pair.png)
 
 3. Make a `dayofweek` column that indicates the day of week. Reproduce the same boxplot in `2.` using weekday and weekend 
-   data respective. 
+   data respective. Label the weekday and weekend boxplots respectively. Inspect your plots and describe the differences
+   between weekend and weekday user activities. Is there any outstanding observations on the weekday you would like to
+   investigate further? If so, what are they and what are the dates? Do they make sense?
+   
+4. Subscribers
 
-## Data Exploration and Graphing
-You will be exploring and graphing data from the Bay Area Bike Share. Download the data and review it well enough to understand the contents.  The data directory contains a README with further explanation.
+5. 
 
-This assignment has three parts
-
-1. Create a graph that is based on data from only one of the columns of the original data.  For example, this might be a histogram of that data.
-
-2. Create a graph that is based on data from only two columns of the original data.  This might me a scatterplot, a faceted histogram, etc.
-
-3. Create graph that is based on data from at least 3 columns of the original data.  This could be a colored scatterplot, a scatterplot matrix, faceted histograms, etc.
-
-For each of the three parts, your goal should be to create the most interesting or insightful graph you can given the constraints on how much data is used.  Create a separate document that explains why you find each graph insightful and/or what you learn from the results.
-
-
-
-```
-1. CRIM      per capita crime rate by town
-    2. ZN        proportion of residential land zoned for lots over 
-                 25,000 sq.ft.
-    3. INDUS     proportion of non-retail business acres per town
-    4. CHAS      Charles River dummy variable (= 1 if tract bounds 
-                 river; 0 otherwise)
-    5. NOX       nitric oxides concentration (parts per 10 million)
-    6. RM        average number of rooms per dwelling
-    7. AGE       proportion of owner-occupied units built prior to 1940
-    8. DIS       weighted distances to five Boston employment centres
-    9. RAD       index of accessibility to radial highways
-    10. TAX      full-value property-tax rate per $10,000
-    11. PTRATIO  pupil-teacher ratio by town
-    12. B        1000(Bk - 0.63)^2 where Bk is the proportion of blacks 
-                 by town
-    13. LSTAT    % lower status of the population
-    14. MEDV     Median value of owner-occupied homes in $1000's
-```
-
-
-####Column Counting Caveats
-- If you use a feature to column to filter to a subset of the data, and plot that subset, the feature you filtered on doesn't count towards the column count (unless you also directly plot it). 
-- If you derive new columns from a single column of raw data, you can plot as many derived features as you want, and it only counts as a single column (since it came from a single raw column)
-
-Files contain data from  3/1/14 to 8/31/14.
-
-1) REBALANCING DATA
-FILE = "201408_rebalancing_data.csv"
--station_id: station ID number (use "201408_station_data.csv" to find corresponding station information)
--bikes_available: number of available bikes
--docks_available: number of available docks
--time: date and time, PST
-
-2) STATION INFORMATION
-FILE = "201408_station_data.csv"
--station_id: station ID number (corresponds to "station_id" in "201408_rebalancing_data.csv")
--name: name of station
--lat: latitude
--long: longitude
--dockcount: number of total docks at station
--landmark: city (San Francisco, Redwood City, Palo Alto, Mountain View, San Jose)
--installation: date that station was installed 
-
-3) TRIP DATA
-FILE = "201408_trip_data.csv"
--Trip ID: numeric ID of bike trip
--Duration: time of trip in seconds
--Start Date: start date of trip with date and time, in PST
--Start Station: station name of start station
--Start Terminal: numeric reference for start station
--End Date: end date of trip with date and time, in PST
--End Station: station name for end station
--End Terminal: numeric reference for end station
--Bike #: ID of bike used
--Subscription Type: Subscriber = annual member; Customer = 24-hour or 3-day member
--Zip Code: Home zip code of user (only available for annual members)
-
-4) WEATHER DATA
-FILE = "201408_weather_data.csv"
-Daily weather information per service area. Weather is listed from north to south (San Francisco, Redwood City, Palo Alto, Mountain View, San Jose).
-	
--Max_Visibility_Miles 	
--Mean_Visibility_Miles 	
--Min_Visibility_Miles 	 		
--Precipitation_In 	"numeric, in form x.xx but alpha ""T""= trace when amount less than .01 inch"	
--Cloud_Cover 	"scale of 0-8, 0=clear"	
--Events	"text field - entries: rain, fog, thunderstorm"	
--zip code: 94107=San Francisco, 94063=Redwood City, 94301=Palo Alto, 94041=Mountain View, 95113= San Jose"	
