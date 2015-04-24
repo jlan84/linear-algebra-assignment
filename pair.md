@@ -10,22 +10,23 @@ will walk through an example of doing so.
  
 In this scenario, you are a data scientist at [Bay Area Bike Share](http://www.bayareabikeshare.com/). You are
 interested in understanding the factors that drives bike sharing activity so you can better inform the marketing 
-team about advertisement strategies. 
+team about its advertisement strategies. 
 
-1. Load the CSV file `201402_trip_data.csv` into a dataframe. Explore the user activity of at each hour of the day
-   on average over the 7 month period the data spans. 
+1. Load the file `201402_trip_data.csv` into a dataframe. Explore the user activity at each hour of the day
+   over the 7 month period the data spans. 
    
    **Below are some guidelines you can follow:**
-   - Make the `Start Time` column a datetime column using the `parse_dates` argument in the `pd.read_csv` function 
-   - Since we are interested in activity by the hour, create columns which are the `date` and `hour` of the `Start Time`
-   - Groupby `date` and `hour` and count the number of users in an hour on a specific date
+   - Make `Start Time` a datetime column using the `parse_dates` argument in the 
+    [`pd.read_csv`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.io.parsers.read_csv.html) function 
+   - Since we are interested in user count by the hour, create columns which are the `date` and `hour` of the `Start Time`
+   - Groupby `date` and `hour` and count the number of users in a given hour on a specific date
    - Groupby `hour` only to get all the variations of user activity for a given hour over all the dates 
    
-2. Make a [boxplot](http://blog.bharatbhole.com/creating-boxplots-with-matplotlib/) of the hours in the day against 
-   the number of users in that given hour. 
+2. Make a [boxplot](http://blog.bharatbhole.com/creating-boxplots-with-matplotlib/) of the hours in the day **(x)**
+   against the number of users **(y)** in that given hour. 
    
-   Someone from the analytics team made a line plot (right) that he claims is showing the same information as your
-   boxplot (left). Why is that not true in general? Describe the insight you have gain from your plot. Is there
+   Someone from the analytics team made a line plot (__right__) that he claims is showing the same information as your
+   boxplot (__left__). Why is that not true in general? Describe the insight you have gain from your plot. Is there
    anything on the plot that you deem worthy of further investigation?
    
    ![image](images/q1_pair.png)
