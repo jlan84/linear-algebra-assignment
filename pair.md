@@ -19,19 +19,23 @@ team about its advertisement strategies.
    - Make `Start Time` a datetime column using the `parse_dates` argument in the 
     [`pd.read_csv`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.io.parsers.read_csv.html) function 
    - Since we are interested in user count by the hour, create columns which are the `date` and `hour` of the `Start Time`
+     ([Hint](http://stackoverflow.com/questions/25129144/pandas-return-hour-from-datetime-column-directly))
    - Groupby `date` and `hour` and count the number of users in a given hour on a specific date
    - Groupby `hour` only to get all the variations of user activity for a given hour over all the dates 
    
 2. Make a [boxplot](http://blog.bharatbhole.com/creating-boxplots-with-matplotlib/) of the hours in the day **(x)**
    against the number of users **(y)** in that given hour. 
    
-   Someone from the analytics team made a line plot (__right__) that he claims is showing the same information as your
-   boxplot (__left__). Why is that not true in general? Describe the insight you have gain from your plot. Is there
-   anything on the plot that you deem worthy of further investigation?
+   Someone from the analytics team made a line plot (_right_) that he claims is showing the same information as your
+   boxplot (_left_). Why is that not true in general? Describe the insight you have gain from your boxplot.
+   Provide an explanation as to why the interquartile range (IQR) of the boxplot at hour `8, 9, 18, 19` is wider
+   than the rest. The answer is not straightforward, so move on to the next question if you are spending more than
+   5 minutes on the explanation.
    
    ![image](images/q1_pair.png)
 
-3. 
+3. Make a `dayofweek` column that indicates the day of week. Reproduce the same boxplot in `2.` using weekday and weekend 
+   data respective. 
 
 ## Data Exploration and Graphing
 You will be exploring and graphing data from the Bay Area Bike Share. Download the data and review it well enough to understand the contents.  The data directory contains a README with further explanation.
