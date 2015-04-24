@@ -1,134 +1,121 @@
-Include your answers to this afternoon's exercies in `afternoon.py`.
+Include your answer in `afternoon_answer.md`
 
-This afternoon you will be introduced to the basics of linear regression.
+##Part 0: Exploratory Data Analysis (EDA)
 
-## Part 0: Solving the Normal Equation
+EDA is a crucial step in the process of building a predictive model. EDA helps you understand the characteristics
+of your data and the relationships between your variables through visualizing and summarizing your data. 
 
-The beta coefficients of a linear regression model can be calculated by
-solving the normal equation. 
-
-
-1. Load the data in by the following code:
-
-   ```python 
-   import statsmodels.api as sm
-   prestige = sm.datasets.get_rdataset("Duncan", "car", cache=True).data
-   y = prestige['prestige']
-   x = prestige[['income', 'education']].astype(float)
-   ```
-   
-   **Hint:**
-   - **The features (x) should be scaled (centered by mean and divided by standard deviation)**
-   - **After scaling, append a column of 1's to the feature matrix (x),
-     so an intercept can be fitted.**
+<br>
+ 
+In this scenario, you are a data scientist at [Bay Area Bike Share](http://www.bayareabikeshare.com/). You are
+interested in understanding the factors that drives bike sharing activity so you can better inform the marketing 
+team about advertisement strategies. You are given 2 csv files: `201402_trip_data.csv` and `201402_weather_data.csv`.
 
 
-2. Using numpy, write a function that solves the **normal equation** (below).
-   As input your function should take a matrix of features (**x**) and
-   a vector of target (**y**). You should return a vector of beta coefficients 
-   that represent the line of best fit which minimizes the residual. 
-   Calculate  R<sup>2</sup>. 
-   
-   <div align="center">
-      <img height="30" src="images/normal_equation.png">
-   </div>
 
-3. Verify your results using statsmodels. Use the code below as a reference.
-   ```python
-   import statsmodels.api as sms
-   model = sms.OLS(y, x).fit()
-   summary = model.summary()
-   ```
+Interested in the ride activity
+- with weather
+- with time of the day
+- with day of the week
+- 
 
-## Part 1: Linear Regression Diagnosis
-
-The linear regression model makes a number of assumptions about the data, including 
-
-- **Homoscedasticity of residuals**
-- **Normal distribution of residual**
-- **Lack of mutlicollinearity between features**
-- **Lack of autocorrelation (if the data is a time series)**
-
-Since the results of the regression model depend on these statistical assumptions, the 
-results are only correct of our assumptions hold (at least approximately).
-
-Using the fitted model above with the prestige data, answer the following questions
-
-1. Use the **Goldfeld-Quandt** test (`sm.stats.diagnostic.het_goldfeldquandt`) to 
-   assert the homoscedasticity of the residuals
-
-2. Use the **Jarque-Bera/Omnibus** test (included in model summary) to assert to the 
-   normality of the residuals. 
-     
-3. Use the **Condition Number** (included in model summary) to assert the lack of multicollinerity.
-   As a rule of thumb, a condition number > 30 indicates multicollinearity between the features.
-   
-   Furthermore, we can use the **Variance Inflation Factor (VIF)** 
-   (`sm.stats.outliers_influence.variance_inflation_factor`) to measure how collinear a particular 
-   feature is with the rest of the features. As a rule of thumb, a VIF > 10 indicates the feature is
-   collinear with at least another feature.
-   
-   **Hint:**
-   - `variance_inflation_factor` takes a matrix of features and the column index of the feature the VIF
-     is to be calculated
-   - Write a function that loops through and calculate VIF for all the features
-   
-## Part 2: Interpreting coefficients and model fit
-
-1. Examine and interpret the beta coefficients of income and education of the model. Are the effects 
-   statisitcally significant?
-
-2. Explain and interpret what the R<sup>2</sup> and adjusted R<sup>2</sup> indiciate. 
-   
-## Part 3: Interpreting the residuals 
-
-Plotting the residuals allows you identify outliers which represents data points where
-the prediction by the model deviates much from the actual value.
-
-1. Plot the fitted y value against studendized residuals (residual divided by standard deviation of residuals)
-   
-   **Hint:** 
-   - **Use `summary.resid` and `summary.fittedvalues` to get the 
-     residuals and the fitted y values**
-   - **Use `plotly` to make the plot so the points will be labeled and 
-     you can easily refer back to the points with large residuals 
-     (`> 2` or `< -2`)**
-   
-   <br>
-   
-   <div align="center">
-      <img width="650" src="images/plotly_resid.png">
-   </div>
-
-2. Identify the points with large residuals (more than 2 standard deviations).
-   Plot **income against studendized residuals** and **education against studendized residuals**
-   and explain outliers in terms of income and education.
-   
-3. In addition to residuals, the measure of influence indicates how much effect a data point has on
-   the model (i.e. flutuations in beta coefficients). Outliers with large residuals and large 
-   [leverage](http://en.wikipedia.org/wiki/Cook%27s_distance) are influential and should be treated 
-   with caution.
-   
-   Plot the **Influence Plot** (`sm.graphics.influence_plot`) and identify the influential points
-   
-4. Remove the influential points identified in `3.` and re-fit the model. Describe the differences 
-   you observe in beta coefficients of the new model 
+1. 
 
 
-## Part 4: Partial Regression Plots and CCPR Plots
 
-**Partial Regression Plots** indicates the strength of the linear relationship between **an individual
-feature and the response variable conditioned on rest of features in the model**. Partial regression plots 
-are also used to identify data points with high leverage and influential data points that might not have
-high leverage.
+As mentioned in Chapter 1, exploratory data analysis or “EDA” is a critical
+first step in analyzing the data from an experiment. Here are the main reasons we
+use EDA:
+• detection of mistakes
+• checking of assumptions
+• preliminary selection of appropriate models
+• determining relationships among the explanatory variables, and
+• assessing the direction and rough size of relationships between explanatory
+and outcome variables.
 
-**Component-Component plus Residual (CCPR) Plots** indicates the nature of the relationship between
-an individual feature and the response variable. They are useful in determining if the feature has to 
-be transformed (e.g. log / polynomial terms).
 
-1. Use `sm.graphics.plot_partregress` to make Partial Regression plots for income and
-   education. Identify the influential points and describe the correlation between the individual 
-   features conditioned on the rest of the features. 
-   
-2. Use `sm.graphics.plot_ccpr` to make Component-Component plus Residual plots for income and
-   education. Are there any transformations needed for any of the features?
+
+## Data Exploration and Graphing
+You will be exploring and graphing data from the Bay Area Bike Share. Download the data and review it well enough to understand the contents.  The data directory contains a README with further explanation.
+
+This assignment has three parts
+
+1. Create a graph that is based on data from only one of the columns of the original data.  For example, this might be a histogram of that data.
+
+2. Create a graph that is based on data from only two columns of the original data.  This might me a scatterplot, a faceted histogram, etc.
+
+3. Create graph that is based on data from at least 3 columns of the original data.  This could be a colored scatterplot, a scatterplot matrix, faceted histograms, etc.
+
+For each of the three parts, your goal should be to create the most interesting or insightful graph you can given the constraints on how much data is used.  Create a separate document that explains why you find each graph insightful and/or what you learn from the results.
+
+
+
+```
+1. CRIM      per capita crime rate by town
+    2. ZN        proportion of residential land zoned for lots over 
+                 25,000 sq.ft.
+    3. INDUS     proportion of non-retail business acres per town
+    4. CHAS      Charles River dummy variable (= 1 if tract bounds 
+                 river; 0 otherwise)
+    5. NOX       nitric oxides concentration (parts per 10 million)
+    6. RM        average number of rooms per dwelling
+    7. AGE       proportion of owner-occupied units built prior to 1940
+    8. DIS       weighted distances to five Boston employment centres
+    9. RAD       index of accessibility to radial highways
+    10. TAX      full-value property-tax rate per $10,000
+    11. PTRATIO  pupil-teacher ratio by town
+    12. B        1000(Bk - 0.63)^2 where Bk is the proportion of blacks 
+                 by town
+    13. LSTAT    % lower status of the population
+    14. MEDV     Median value of owner-occupied homes in $1000's
+```
+
+
+####Column Counting Caveats
+- If you use a feature to column to filter to a subset of the data, and plot that subset, the feature you filtered on doesn't count towards the column count (unless you also directly plot it). 
+- If you derive new columns from a single column of raw data, you can plot as many derived features as you want, and it only counts as a single column (since it came from a single raw column)
+
+Files contain data from  3/1/14 to 8/31/14.
+
+1) REBALANCING DATA
+FILE = "201408_rebalancing_data.csv"
+-station_id: station ID number (use "201408_station_data.csv" to find corresponding station information)
+-bikes_available: number of available bikes
+-docks_available: number of available docks
+-time: date and time, PST
+
+2) STATION INFORMATION
+FILE = "201408_station_data.csv"
+-station_id: station ID number (corresponds to "station_id" in "201408_rebalancing_data.csv")
+-name: name of station
+-lat: latitude
+-long: longitude
+-dockcount: number of total docks at station
+-landmark: city (San Francisco, Redwood City, Palo Alto, Mountain View, San Jose)
+-installation: date that station was installed 
+
+3) TRIP DATA
+FILE = "201408_trip_data.csv"
+-Trip ID: numeric ID of bike trip
+-Duration: time of trip in seconds
+-Start Date: start date of trip with date and time, in PST
+-Start Station: station name of start station
+-Start Terminal: numeric reference for start station
+-End Date: end date of trip with date and time, in PST
+-End Station: station name for end station
+-End Terminal: numeric reference for end station
+-Bike #: ID of bike used
+-Subscription Type: Subscriber = annual member; Customer = 24-hour or 3-day member
+-Zip Code: Home zip code of user (only available for annual members)
+
+4) WEATHER DATA
+FILE = "201408_weather_data.csv"
+Daily weather information per service area. Weather is listed from north to south (San Francisco, Redwood City, Palo Alto, Mountain View, San Jose).
+	
+-Max_Visibility_Miles 	
+-Mean_Visibility_Miles 	
+-Min_Visibility_Miles 	 		
+-Precipitation_In 	"numeric, in form x.xx but alpha ""T""= trace when amount less than .01 inch"	
+-Cloud_Cover 	"scale of 0-8, 0=clear"	
+-Events	"text field - entries: rain, fog, thunderstorm"	
+-zip code: 94107=San Francisco, 94063=Redwood City, 94301=Palo Alto, 94041=Mountain View, 95113= San Jose"	
