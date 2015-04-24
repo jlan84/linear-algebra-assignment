@@ -10,8 +10,7 @@ will walk through an example of doing so.
  
 In this scenario, you are a data scientist at [Bay Area Bike Share](http://www.bayareabikeshare.com/). You are
 interested in understanding the factors that drives bike sharing activity so you can better inform the marketing 
-team about advertisement strategies. You are given 2 csv files:  and `201402_weather_data.csv`.
-
+team about advertisement strategies. 
 
 1. Load the CSV file `201402_trip_data.csv` into a dataframe. Explore the user activity of at each hour of the day
    on average over the 7 month period the data spans. 
