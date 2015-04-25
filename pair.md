@@ -1,4 +1,4 @@
-Include your answer in `afternoon_answer.md`
+Include your answer in `afternoon_answer.py`
 
 ##Part 1: Exploratory Data Analysis (EDA)
 
@@ -48,27 +48,22 @@ is to provide insights on bike user activity and behavior to the products team.
    the number of users **(y)** in that given hour. 
    
 6. Someone from the analytics team made a line plot (_right_) that he claims is showing the same information as your
-   boxplot (_left_). Why is that not true in general? Describe the insight you have gain from your boxplot.
+   boxplot (_left_). What information can you gain from the boxplot that is missing in the line plot?
    
    ![image](images/q1_pair.png)
 
-3. Make a `dayofweek` column that indicates the day of week. Reproduce the same boxplot in `2.` using weekday and weekend 
-   data respective. Label the weekday and weekend boxplots respectively. Inspect your plots and describe the differences
-   between weekend and weekday user activities. Is there any outstanding observations on the weekday you would like to
-   investigate further? If so, what are they and what are the dates? Do they make sense?
-   
-4. There are two types of bike users (specified by column `Subscription Type`: `Subscriber` and `Customer`. Given this
+7. Replot the boxplot in `6.` after binning your data into weekday and weekend. Describe the differences you observe
+   between hour user activity between weekday and weekend? 
+    
+8. There are two types of bike users (specified by column `Subscription Type`: `Subscriber` and `Customer`. Given this
    information and the weekend and weekday categorization, plot and inspect the user activity trends. Suppose the 
-   product team wants to run a promotional campaign, would you suggest them do it on a weekday or weekend, and
-   during what time in the day? Why?
-
-5. Incomplete/missing data is a commonality when dealing with real data. Make a plot of the **number of user** in 
-   each month. Comment on the availability of the data. Plot the daily number of users from September to
-   December. 
-
-   ![userbymonth](images/user_by_month.png)
-
-6. 
+   product team wants to run a promotional campaign, what are you suggestions in terms of who the promotion should 
+   apply to and when it should apply for the campaign to be effective?
+   
+   ![image](images/nonsub.png)
+   ![image](images/customer.png)
+   
+9. 
 
    ![scatter](images/scatter.png)
 
