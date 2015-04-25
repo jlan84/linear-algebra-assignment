@@ -52,3 +52,5 @@ is to provide insights on bike user activity to the products team in order to be
 6. 
 
    ![scatter](images/scatter.png)
+
+7. regesss users by weather variables
