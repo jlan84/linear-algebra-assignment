@@ -8,9 +8,8 @@ will walk through an example of doing so.
 
 <br>
  
-In this scenario, you are a data scientist at [Bay Area Bike Share](http://www.bayareabikeshare.com/). You are
-interested in understanding the factors that drives bike sharing activity so you can better inform the marketing 
-team about its advertisement strategies. 
+In this scenario, you are a data scientist at [Bay Area Bike Share](http://www.bayareabikeshare.com/). Your task
+is to provide insights on bike user activity to the products team in order to better strategize their advertisement. 
 
 1. Load the file `201402_trip_data.csv` into a dataframe. Explore the user activity at each hour of the day
    over the 7 month period the data spans. 
@@ -39,7 +38,15 @@ team about its advertisement strategies.
    between weekend and weekday user activities. Is there any outstanding observations on the weekday you would like to
    investigate further? If so, what are they and what are the dates? Do they make sense?
    
-4. Subscribers
+4. There are two types of bike users (specified by column `Subscription Type`: `Subscriber` and `Customer`. Given this
+   information and the weekend and weekday categorization, plot and inspect the user activity trends. Suppose the 
+   product team wants to run a promotional campaign, would you suggest them do it on a weekday or weekend, and
+   during what time in the day? Why?
 
-5. 
+5. In real life, you are likely to work with data that is messy or incomplete. Inspect the number of users per month. 
+   Plot **month** against **number of user**. What do you observe? Plot the daily number of users from September to
+   December.
 
+   ![userbymonth](images/user_by_month.png)
+
+6. 
