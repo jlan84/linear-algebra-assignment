@@ -94,8 +94,8 @@ the results before we dive more into the details of linear regression tommorow.
 2. Explore the data by making a [scatter_matrix](http://pandas.pydata.org/pandas-docs/version/0.15.0/visualization.html#visualization-scatter-matrix)
    and a boxplot to show the range of each of your variables.
 
-   ![image](scatter_mat.png)
-   ![image](prestige_boxplot.png)
+   ![image](images/scatter_mat.png)
+   ![image](images/prestige_boxplot.png)
    
 3. The beta coefficients of a linear regression model can be calculated by solving the normal equation.
    Using numpy, write a function that solves the **normal equation** (below).
