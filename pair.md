@@ -50,3 +50,5 @@ is to provide insights on bike user activity to the products team in order to be
    ![userbymonth](images/user_by_month.png)
 
 6. 
+
+   ![scatter](images/scatter.png)
