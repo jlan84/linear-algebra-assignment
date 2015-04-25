@@ -11,7 +11,7 @@ In this scenario, you are a data scientist at [Bay Area Bike Share](http://www.b
 is to provide insights on bike user activity and behavior to the products team. 
 
 
-1. Load the file `201402_trip_data.csv` into a dataframe. Provide the argument `parse_dates=['Start Date', 'End Date']`
+1. Load the file `data/201402_trip_data.csv` into a dataframe. Provide the argument `parse_dates=['Start Date', 'End Date']`
    with `pandas.read_csv()` to read the columns in as datetime objects. 
    
    Make 4 extra columns from the `Start Date` column (We will use these in later questions):
@@ -63,7 +63,7 @@ is to provide insights on bike user activity and behavior to the products team.
    ![image](images/customer.png)
    
 9. **Extra Credit:** You are also interested to identify stations with low usage. Load the csv file 
-   `201402_station_data.csv` into a dataframe. The `docksize` column specifies how many bikes the station can hold. 
+   `data/201402_station_data.csv` into a dataframe. The `docksize` column specifies how many bikes the station can hold. 
    The `lat` and `long` columns specify the latitude and longitude of the station. 
    
    - Merge the station data with the trip data
@@ -76,3 +76,43 @@ is to provide insights on bike user activity and behavior to the products team.
 
 
 ##Part 2: Intro to Linear Regression
+
+Linear regression is an approach to model the relationship between a continuous dependent (**y**) variable and 
+one or more continuous independent (**x**) variables. Here you will be introduced to fitting the model and interpret
+the results before we dive more into the details of linear regression tommorow.
+
+1. We will be using the `prestige` data in `statsmodels`. `statsmodels` is the de facto library for performing regression
+   task in Python. Load the data with the follow code. 
+
+   ```python 
+   import statsmodels.api as sm
+   prestige = sm.datasets.get_rdataset("Duncan", "car", cache=True).data
+   y = prestige['prestige']
+   x = prestige[['income', 'education']].astype(float)
+   ```
+
+2. Explore the data by making a [scatter_matrix](http://pandas.pydata.org/pandas-docs/version/0.15.0/visualization.html#visualization-scatter-matrix)
+   and a boxplot to show the range of each of your variables.
+
+   ![image](scatter_mat.png)
+   ![image](prestige_boxplot.png)
+   
+3. The beta coefficients of a linear regression model can be calculated by solving the normal equation.
+   Using numpy, write a function that solves the **normal equation** (below).
+   As input your function should take a matrix of features (**x**) and
+   a vector of target (**y**). You should return a vector of beta coefficients 
+   that represent the line of best fit which minimizes the residual. 
+   Calculate  R<sup>2</sup>. 
+   
+   <div align="center">
+      <img height="30" src="images/normal_equation.png">
+   </div>
+
+3. Verify your results using statsmodels. Use the code below as a reference.
+   ```python
+   import statsmodels.api as sms
+   model = sms.OLS(y, x).fit()
+   summary = model.summary()
+   ```
+
+4. Interpret your result summary. Focus on the beta coefficent, F-statistics and the R<sup>2</sup> 
