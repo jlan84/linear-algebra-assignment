@@ -30,7 +30,6 @@ is to provide insights on bike user activity and behavior to the products team.
    
    ![image](images/timeseries.png)
 
-
 4. Plot the distribution of the daily user counts for all months as a histogram. Fit a 
    [KDE](http://glowingpython.blogspot.com/2012/08/kernel-density-estimation-with-scipy.html) to the histogram.
    What is the distribution and explain why the distribution might be shaped as such. 
@@ -63,9 +62,17 @@ is to provide insights on bike user activity and behavior to the products team.
    ![image](images/nonsub.png)
    ![image](images/customer.png)
    
-9. 
-
-   ![scatter](images/scatter.png)
+9. **Extra Credit:** You are also interested to identify stations with low usage. Load the csv file 
+   `201402_station_data.csv` into a dataframe. The `docksize` column specifies how many bikes the station can hold. 
+   The `lat` and `long` columns specify the latitude and longitude of the station. 
+   
+   - Merge the station data with the trip data
+   - Compute usage by counting the total users starting at a particular station divided by the dockcount
+   - Normalize usage to range from `0`to `1`
+   - Using plotly, plot the latitude and longitude of the stations as scatter points, the usage will be indicated 
+     by the transperancy and the size of the points
+  
+   ![scatter](images/plotly.png)
 
 
 ##Part 2: Intro to Linear Regression

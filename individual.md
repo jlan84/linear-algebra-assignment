@@ -1,4 +1,4 @@
-Include your answers to this morning's exercies in `morning.py`.
+Include your answers to this morning's exercies in `individual_answers.py`.
 
 This morning we will revisit some linear algebra using the numpy library in python. 
 
