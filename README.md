@@ -5,7 +5,7 @@
 - Understand common techniques in Exploratory Data Analysis (EDA)
 - Understand the basic of linear regression
 
-## Numpy
+### Numpy Resources
 
 * [Official Numpy Tutorial](http://wiki.scipy.org/Tentative_NumPy_Tutorial)
 * [scipy Lectures](https://scipy-lectures.github.io/intro/numpy/index.html)
