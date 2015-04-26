@@ -82,7 +82,8 @@ one or more continuous independent (**x**) variables. Here you will be introduce
 the results before we dive more into the details of linear regression tommorow.
 
 1. We will be using the `prestige` data in `statsmodels`. `statsmodels` is the de facto library for performing regression
-   tasks in Python. Load the data with the follow code. 
+   tasks in Python. Load the data with the follow code. **Remember to add a column of `1` to the x matrix for the 
+   model to fit an intercept**.
 
    ```python 
    import statsmodels.api as sm
