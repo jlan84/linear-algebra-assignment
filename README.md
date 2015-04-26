@@ -1,14 +1,11 @@
+##Goals
 
-## References
+- Understand basics of linear algebra
+- Application of linear algebra in `numpy`
+- Understand common techniques in Exploratory Data Analysis (EDA)
+- Understand the basic of linear regression
 
-### Linear Algebra
-
-* [Khan Academy](https://www.khanacademy.org/math/linear-algebra)
-* [Linear Algrbra in Four pages](http://cnd.mcgill.ca/~ivan/miniref/linear_algebra_in_4_pages.pdf)
-* [Andrew Ng Linear Algebra Review](http://cs229.stanford.edu/section/cs229-linalg.pdf)
-
-
-### Numpy
+## Numpy
 
 * [Official Numpy Tutorial](http://wiki.scipy.org/Tentative_NumPy_Tutorial)
 * [scipy Lectures](https://scipy-lectures.github.io/intro/numpy/index.html)
