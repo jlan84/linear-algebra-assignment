@@ -1,0 +1,205 @@
+\documentclass{article}
+
+\begin{document}
+
+
+
+\centerline{\sc \large Linear Algebra}
+\vspace{2 pc}
+
+Most datasets that we'll be looking at are tables with columns corresponding to features and rows corresponding to examples. Suppose that the data that we're considering is \textbf{numeric} data. Then a given row/column can be identified with the mathematical structure called a vector, and the data itself can be viewed as a matrix. The study of vectors and matrices is subsumed by the subject of \textbf{Linear Algebra}. The subject figures very heavily in algorithms to analyze data.
+
+Probably almost all of you have seen 2 and 3 dimensional vectors at some point in your education (for example, in high school physics). A general \emph{vector} is just the analogous thing in $n$-dimensions. It can be visualized as an arrow (directed line segment) in $n$ dimensional space. It can be represented as an array $\textbf{v} = [v_1, v_2 ..., v_n ]$ of real numbers, which specify the coordinates of the tip of the vector if the tail is placed at the origin.\\
+
+\centerline{\sc \large Dot Product}\
+
+
+\noindent The \emph{dot product} of two vectors $\textbf{v}$ and $\textbf{w}$ is given by 
+
+\[  \textbf{v} \cdot \textbf{w} = v_1 \cdot w_1 + v_2 \cdot w_2 + \cdots + v_n \cdot w_n \] 
+
+\noindent If $\textbf{v}$ and $\textbf{w}$ are zero centered, then $\textbf{v} \cdot \textbf{w} /n $ is just the \emph{covariance} of $\textbf{v}$ and $\textbf{w}$. 
+
+
+\noindent The \emph{norm} of a vector $\textbf{v}$ is defined by \\
+ 
+\[  ||\textbf{v}||  = \sqrt{v_{1}^2 + v_{2}^2+ \cdots + v_{n}^2} \]
+
+This is a generalization of the Euclidean distance (coming from the Pythagorean theorem) that you're familiar with. \\
+
+We have\\
+\[  ||\textbf{v}||^2 = \textbf{v} \cdot \textbf{v} = v_{1}^2 + v_{2}^2+ \cdots + v_{n}^2 \]
+
+
+When $\textbf{v}$ is zero-centered, $||\textbf{v}||^2 / n$  is the \emph{variance} of $\textbf{v}$, and $\sqrt{||\textbf{v}||^2 / n}$ i s the \emph{standard deviation} of $\textbf{v}$.\\
+
+
+\noindent The cosine of the angle between the two vectors is given by
+\[  \cos{\theta} = \frac{\textbf{v} \cdot \textbf{w}}{||\textbf{v}||\cdot||\textbf{w}||}\] 
+
+This is also called the \emph{cosine similarity}. When $\textbf{v}$ and $\textbf{w}$ are zero centered, this is  the \emph{correlation} between $\textbf{v}$ and $\textbf{w}$.\\
+
+\centerline{\sc \large Linear Combinations}\
+
+We frequently find ourselves adding vectors and multiplying them by numbers. If $\textbf{v} = \{v_i\}$ and $\textbf{w} = \{w_i\}$ then:
+
+\[ \textbf{v} + \textbf{w} = \left[ \begin{array}{c}
+v_{1} + w_{1} \\
+v_{2} + w_{2} \\
+v_{n} + w_{n}
+ \end{array} \right]\] 
+
+and if $a$ is a real number, then
+
+\[ a\cdot \textbf{v} =  \left[ \begin{array}{c}
+a \cdot v_{1}  \\
+a \cdot v_{2} \\
+\cdots \\
+a \cdot v_{n} \\
+ \end{array} \right]\] 
+
+A \emph{linear combination} of a collection of vectors $\textbf{v}_1, \ldots, \textbf{v}_m$ is a vector of the form
+
+\[  a_1 \cdot \textbf{v}_1 +  a_2 \cdot \textbf{v}_2 + \cdots + a_m \cdot \textbf{v}_m \] 
+
+where the numbers $a_i$ are real numbers.\\
+
+
+
+In data science, we often find ourselves predicting a quantity using a linear combination of vectors. In a survey, 544 people were asked to report on their involvement in sports, watching TV, and watching TV sports on a scale from 1 to 10. Our data frame is
+
+\[ [ \textbf{sports}, \textbf{tvsports}, \textbf{tv}, \textbf{gender} ] \]
+
+\noindent where ``gender'' is encoded as $1$ for rows corresponding to males and $0$ for rows corresponding to females. Using \emph{linear regression}, which you'll be learning about tomorrow, we obtain the approximation
+
+\[  \textbf{sports} \approx 4.8 +0.78 \cdot\textbf{gender} + 0.48 \cdot \textbf{tvsports} - 0.18 \cdot \textbf{tv} \]\
+
+\noindent which we can use use to predict how involved someone is in sports knowing their gender, how much they watch tv, and how much they watch tv sports.\\
+
+\centerline{\sc \large Matrices}\
+
+A matrix is an $m$ by $n$ grid of numbers like so: 
+
+\[ M = \left[ \begin{array}{ccc}
+1 & 4 & 10 \\
+2 & 9 & 6 \\
+5 & 3 & 7  \\
+8 & 12 & 11 \end{array} \right]\] 
+
+We can view it as an array of the columns (called \emph{column vectors}) or an array of rows (called \emph{row vectors}. The \emph{transpose} of a matrix is the matrix obtained by interchanging the rows and the columns. We have
+
+\[ M^T = \left[ \begin{array}{cccc}
+1 & 2 & 5 & 8 \\
+4 & 9 & 3 & 12 \\
+10 & 6 & 7 & 11\\
+ \end{array} \right]\] 
+
+Data frames can be represented as matrices. There are other important matrices that arise in data science as well. For example, the \emph{covariance matrix} associated with a data frame is a matrix with the entry of the $i^{th}$ row and $j^{th}$ column being the covariance of feature $i$ and feature $j$. In the example of the survey of involvement in activities, we get covariance matrix
+
+
+\[ COV = \left[ \begin{array}{ccccc}
+ & sports & gender & tv sports & tv \\
+sports & 6.92 & 0.33 & 3.61 & -0.49 \\
+gender & 0.33 & 0.25 & 0.22 & -0.20  \\
+tv sports  & 3.61 & 0.22 & 7.85 & 1.72 \\
+tv  & -0.49 & -0.20 & 1.72 & 6.49 
+\end{array} \right]\] 
+
+The correlation matrix is defined similarly: we get
+
+
+\[ COR = \left[ \begin{array}{ccccc}
+ & sports & gender & tv sports & tv \\
+sports & 1.00 &  0.25 & 0.49 & -0.07 \\
+gender & 0.25 & 1.00 & 0.15 & -0.16  \\
+tv sports  & 0.49 & 0.15 & 1.00 & 0.24 \\
+tv  & -0.07 & -0.16 & 0.24 & 1.00 
+\end{array} \right]\] 
+
+
+Note the symmetry about the diagonal: we have $COV = COV^T$ and $COR = COR^T$.\\
+
+\centerline{\sc \large Product and Inverse}\
+
+
+Given a matrix $A$ and a vector $\textbf{v}$, the product $A \cdot \textbf{v}$ is defined to be the vector with $i^{th}$ entry given by the dot product of the $i^{th}$ row of $A$ and $\textbf{v}$. For example, if $M$ is as above, and 
+
+\[ \textbf{v} = \left[ \begin{array}{c}
+3 \\
+2  \\
+4 \\
+\end{array} \right]\] 
+
+then
+
+\[ A  \cdot \textbf{v} = \left[ \begin{array}{c}
+3 \cdot 1 + 2 \cdot4 + 4 \cdot 10 \\
+3 \cdot 2 + 2 \cdot 9 + 4 \cdot 6 \\
+3 \cdot 5 + 2 \cdot 3 + 4 \cdot 7  \\
+3 \cdot 8 + 2 \cdot 12 + 4 \cdot 11 \end{array} \right] = \left[ \begin{array}{c}
+51 \\
+48 \\
+49  \\
+92 \end{array} \right]  \]  
+
+If $B$ is another matrix with number of rows equal to the number of columns of $A$, then we can form the product $A \cdot B$. This will be a matrix, with $i^{th}$ row given by the  product of $A$ with the $i^{th}$ column of $B$. Let $C = A \cdot B$, where $A$ is an $m$ by $n$ matrix and $B$ is an $n$ by $k$ matrix. Then $C$ will be an $m$ by $k$ matrix.\\
+
+When $m = 1$ and $k = 1$, $A$ is a column vector, $B$ is a row vector, and $C$ is just a number giving the dot product of $A$ and $B$. \\
+
+Order of multiplication matters! In general, $AB \neq BA$. \\
+
+When $A$ is square (having equal numbers of rows and columns), it usually happens that there's a matrix $A^{-1}$ with the property that $A \cdot A^{-1} = A \cdot A^{-1}  = \textbf{1}$, where $\textbf{1}$ is a matrix with 1's on the diagonal and 0's elsewhere. If such a matrix exists, we call it the \emph{inverse} of $A$, and say that $A$ is \emph{invertible}.\\
+
+\centerline{\sc \large Eigenvectors and Eigenvalues}\
+
+
+An especially simple kind of matrix is a \emph{diagonal} matrix, with all 0's off of the main diagonal, such as:
+
+\[ A = \left[ \begin{array}{cc}
+2 & 0 \\
+0 & -3 \\
+\end{array} \right]\] 
+
+Given a vector $\textbf{v}$, if we multiply it by $A$ on the left. we get a new vector with first coordinate stretched by 2, and second coordinate stretched by 3 and reversed.\\
+
+A  square matrix $A$  can often be \emph{diagonalized}: there's often an invertible matrix $B$ such that 
+
+\[ B^{-1} A B  = D \] 
+ 
+where $D$ is diagonal, or equivalently
+
+\[ A  = B D B^{-1} \] 
+
+This is equivalent to there being some coordinates along which multiplying by $A$ from the left corresponds to stretching and/or reflection with respect to these (for example, a rotation of the standard coordinate system).\\
+
+The stretching factors are called \emph{eigenvectors} and the directions along which the stretching occurs are called \emph{eigenvalues}. To find them, you find the values of $\lambda$ for which $A \textbf{v} = \lambda \textbf{v}$ has a solution (to get the eigenvalues), and then for each eigenvalue, find the corresponding eigenvector. You won't need to do this by hand.\\
+
+\centerline{\sc \large Numpy}\
+
+The Python library numpy gives a good assortment of tools for doing manipulation with matrices and vectors.
+
+You need to be careful though, because numpy's operations don't always match up exactly with what you would expect based on knowledge of linear algebra. For example, if we have a numpy array
+
+\[ A = \left[ \begin{array}{cc}
+1 & 3 \\
+0 & 1 \\
+\end{array} \right]\] 
+
+then you might expect  \verb|A * A | to be the matrix product of $A$ with itself, which is 
+
+\[ \left[ \begin{array}{cc}
+1 & 6 \\
+0 & 1 \\
+\end{array} \right]\] 
+
+\noindent but instead you get 
+
+\[ \left[ \begin{array}{cc}
+1 & 9 \\
+0 & 1 \\
+\end{array} \right]\]\
+
+\noindent because numpy forms the matrix obtained by taking the product of respective entries to get an entry. Make sure that when you use numpy to take products, you use  \verb|np.dot|. If we type  \verb|np.dot(A, A) | into terminal, we do get $A^2$ as desired.
+
+
+\end{document}
