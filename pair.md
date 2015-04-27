@@ -62,7 +62,7 @@ is to provide insights on bike user activity and behavior to the products team.
    ![image](images/nonsub.png)
    ![image](images/customer.png)
    
-9. **Extra Credit:** You are also interested to identify stations with low usage. Load the csv file 
+9. **Extra Credit:** You are also interested in identifying stations with low usage. Load the csv file 
    `data/201402_station_data.csv` into a dataframe. The `docksize` column specifies how many bikes the station can hold. 
    The `lat` and `long` columns specify the latitude and longitude of the station. 
    
