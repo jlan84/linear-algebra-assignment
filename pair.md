@@ -3,7 +3,7 @@ Include your answer in `afternoon_answer.py`
 ##Part 1: Exploratory Data Analysis (EDA)
 
 Exploratory data analysis is a first crucial step to building predictive models from your data. EDA allows you
-to confirm some of the assumptions you are making about your data and understand relationships between your variables.
+to confirm or invalidate some of the assumptions you are making about your data and understand relationships between your variables.
  
 <br>
  
