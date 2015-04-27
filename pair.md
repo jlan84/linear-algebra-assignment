@@ -114,4 +114,4 @@ the results before we dive more into the details of linear regression tomorrow.
    summary = model.summary()
    ```
 
-4. Interpret your result summary, focusing on the beta coefficent, F-statistics and the R<sup>2</sup>. 
+4. Interpret your result summary, focusing on the beta coefficents, p-values, F-statistic, and the R<sup>2</sup>. 
