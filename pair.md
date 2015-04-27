@@ -77,9 +77,9 @@ is to provide insights on bike user activity and behavior to the products team.
 
 ##Part 2: Intro to Linear Regression
 
-Linear regression is an approach to model the relationship between a continuous dependent (**y**) variable and 
-one or more continuous independent (**x**) variables. Here you will be introduced to fitting the model and interpret
-the results before we dive more into the details of linear regression tommorow.
+Linear regression is an approach to modeling the relationship between a continuous dependent (**y**) variable and 
+one or more continuous independent (**x**) variables. Here you will be introduced to fitting the model and interpreting
+the results before we dive more into the details of linear regression tomorrow.
 
 1. We will be using the `prestige` data in `statsmodels`. `statsmodels` is the de facto library for performing regression
    tasks in Python. Load the data with the follow code. **Remember to add a column of `1` to the x matrix for the 
