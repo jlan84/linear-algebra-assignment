@@ -3,7 +3,7 @@ Include your answer in `afternoon_answer.py`
 ##Part 1: Exploratory Data Analysis (EDA)
 
 Exploratory data analysis is a first crucial step to building predictive models from your data. EDA allows you
-to confirm some of the assumptions you are making about your data and understand relationships between your variables.
+to confirm or invalidate some of the assumptions you are making about your data and understand relationships between your variables.
  
 <br>
  
@@ -62,7 +62,7 @@ is to provide insights on bike user activity and behavior to the products team.
    ![image](images/nonsub.png)
    ![image](images/customer.png)
    
-9. **Extra Credit:** You are also interested to identify stations with low usage. Load the csv file 
+9. **Extra Credit:** You are also interested in identifying stations with low usage. Load the csv file 
    `data/201402_station_data.csv` into a dataframe. The `docksize` column specifies how many bikes the station can hold. 
    The `lat` and `long` columns specify the latitude and longitude of the station. 
    
@@ -77,9 +77,9 @@ is to provide insights on bike user activity and behavior to the products team.
 
 ##Part 2: Intro to Linear Regression
 
-Linear regression is an approach to model the relationship between a continuous dependent (**y**) variable and 
-one or more continuous independent (**x**) variables. Here you will be introduced to fitting the model and interpret
-the results before we dive more into the details of linear regression tommorow.
+Linear regression is an approach to modeling the relationship between a continuous dependent (**y**) variable and 
+one or more continuous independent (**x**) variables. Here you will be introduced to fitting the model and interpreting
+the results before we dive more into the details of linear regression tomorrow.
 
 1. We will be using the `prestige` data in `statsmodels`. `statsmodels` is the de facto library for performing regression
    tasks in Python. Load the data with the follow code. **Remember to add a column of `1` to the x matrix for the 
@@ -114,4 +114,4 @@ the results before we dive more into the details of linear regression tommorow.
    summary = model.summary()
    ```
 
-4. Interpret your result summary, focusing on the beta coefficent, F-statistics and the R<sup>2</sup>. 
+4. Interpret your result summary, focusing on the beta coefficents, p-values, F-statistic, and the R<sup>2</sup>. 
