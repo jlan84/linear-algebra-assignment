@@ -11,10 +11,10 @@ In this scenario, you are a data scientist at [Bay Area Bike Share](http://www.b
 is to provide insights on bike user activity and behavior to the products team. 
 
 
-1. Load the file `data/201402_trip_data.csv` into a dataframe. Provide the argument `parse_dates=['Start Date', 'End Date']`
+1. Load the file `data/201402_trip_data.csv` into a dataframe. Provide the argument `parse_dates=['start_date', 'end_date']`
    with `pandas.read_csv()` to read the columns in as datetime objects. 
    
-   Make 4 extra columns from the `Start Date` column (We will use these in later questions):
+   Make 4 extra columns from the `start_date` column (We will use these in later questions):
    - `month` would contain only the month component
    - `dayofweek` would indicate what day of the week the date is
    - `date` would contain only the date component 
