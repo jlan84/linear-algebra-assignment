@@ -26,6 +26,12 @@ restore the correct dimensions
 
 ## Part 1: Linear Algebra Practice:
 
+###Part 1.1
+
+The stochastic matrix is central to the Markov process. It is a sqaure matrix specifying that probabilities of going from one state to the other such that every column of the matrix sums to 1.
+
+The probability of entering a certain state depends only on the last state occupied and the stochastic matrix, not on any earlier states
+
 Suppose that the 2004 **state of land use** in a city of 60 mi^2 of built-up
 area is
 
@@ -47,7 +53,8 @@ R (Residentially Used): 55%
    
    
 <br>
-<br>
+
+###Part 1.2
 
 This following question uses the `iris` dataset. Load the data in with the following code.
    
