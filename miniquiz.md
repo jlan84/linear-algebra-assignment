@@ -1,4 +1,6 @@
-### Probability Practice
+## Miniquiz: Probability Practice
+
+**Include your code and answers in** `miniquiz.py`.
 
 1. Let's say we play a game where I keep flipping a coin until I get heads.
    If the first time I get heads is on the nth coin, then I pay you 2n-1 dollars.
