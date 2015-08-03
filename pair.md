@@ -1,4 +1,4 @@
-Include your answer in `afternoon_answer.py`
+Include your answer in `pair.py`
 
 ##Part 1: Exploratory Data Analysis (EDA)
 
