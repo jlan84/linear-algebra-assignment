@@ -2,8 +2,8 @@
 
 - Understand basics of linear algebra
 - Application of linear algebra in `numpy`
-- Understand common techniques in Exploratory Data Analysis (EDA)
-- Understand the basic of linear regression
+- Understand common techniques used in Exploratory Data Analysis (EDA)
+- Understand the basics of simple and multiple linear regression
 
 ### Numpy Resources
 
