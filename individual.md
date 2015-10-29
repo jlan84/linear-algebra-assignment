@@ -1,4 +1,4 @@
-Include your answers to this morning's exercies in `individual.py`.
+Include your answers to this morning's exercises in `individual.py`.
 
 This morning we will revisit some linear algebra using the numpy library in python. 
 
@@ -28,7 +28,7 @@ restore the correct dimensions
 
 ###Part 1.1
 
-The stochastic matrix is central to the Markov process. It is a sqaure matrix specifying that probabilities of going from one state to the other such that every column of the matrix sums to 1.
+The stochastic matrix is central to the Markov process. It is a square matrix specifying that probabilities of going from one state to the other such that every column of the matrix sums to 1.
 
 The probability of entering a certain state depends only on the last state occupied and the stochastic matrix, not on any earlier states
 
@@ -160,7 +160,7 @@ know how we will move on this Markov Chain.
 
 5. This time to compute the stationary distribution, we can use numpy's
    matrix operations. Using the function for calculating [eigenvectors](http://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.eig.html) compute the
-   stationary distibution (page rank).  Is it the same as what you found
+   stationary distribution (page rank).  Is it the same as what you found
    from above?  What is it's eigenvalue?
    
    **Hint:** 
