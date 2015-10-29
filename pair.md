@@ -70,7 +70,7 @@ is to provide insights on bike user activity and behavior to the products team.
    - Compute usage by counting the total users starting at a particular station divided by the dockcount
    - Normalize usage to range from `0`to `1`
    - Using plotly, plot the latitude and longitude of the stations as scatter points, the usage will be indicated 
-     by the transperancy and the size of the points
+     by the transparency and the size of the points
   
    ![scatter](images/plotly.png)
 
@@ -114,4 +114,4 @@ the results before we dive more into the details of linear regression tomorrow.
    summary = model.summary()
    ```
 
-4. Interpret your result summary, focusing on the beta coefficents, p-values, F-statistic, and the R<sup>2</sup>. 
+4. Interpret your result summary, focusing on the beta coefficients, p-values, F-statistic, and the R<sup>2</sup>. 
