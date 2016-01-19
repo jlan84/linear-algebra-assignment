@@ -56,7 +56,7 @@ is to provide insights on bike user activity and behavior to the products team.
     
 8. There are two types of bike users (specified by column `Subscription Type`: `Subscriber` and `Customer`. Given this
    information and the weekend and weekday categorization, plot and inspect the user activity trends. Suppose the 
-   product team wants to run a promotional campaign, what are you suggestions in terms of who the promotion should 
+   product team wants to run a promotional campaign, what are your suggestions in terms of who the promotion should 
    apply to and when it should apply for the campaign to be effective?
    
    ![image](images/nonsub.png)
