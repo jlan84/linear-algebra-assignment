@@ -12,7 +12,6 @@
 * [Crash Course in Python for Scientist](http://nbviewer.ipython.org/gist/rpmuller/5920182)
 * [Scientific Python Lectures](http://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-2-Numpy.ipynb)
 * [Numpy Broadcasting](http://wiki.scipy.org/EricsBroadcastingDoc)
-* [Pyton Bootcamp Lectures](http://nbviewer.ipython.org/github/profjsb/python-bootcamp/blob/master/Lectures/05_NumpyMatplotlib/IntroNumPy.ipynb)
 
 ### Handy Visualization Guide
 * [Chart Suggestions](http://extremepresentation.typepad.com/blog/files/choosing_a_good_chart.pdf)
