@@ -1,4 +1,4 @@
-##Goals
+## Goals
 
 - Understand basics of linear algebra
 - Application of linear algebra in `numpy`
