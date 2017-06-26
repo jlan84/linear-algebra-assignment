@@ -1,6 +1,6 @@
 Include your answer in `pair.py`
 
-##Part 1: Exploratory Data Analysis (EDA)
+## Part 1: Exploratory Data Analysis (EDA)
 
 Exploratory data analysis is a first crucial step to building predictive models from your data. EDA allows you
 to confirm or invalidate some of the assumptions you are making about your data and understand relationships between your variables.
@@ -75,7 +75,7 @@ is to provide insights on bike user activity and behavior to the products team.
    ![scatter](images/plotly.png)
 
 
-##Part 2: Intro to Linear Regression
+## Part 2: Intro to Linear Regression
 
 Linear regression is an approach to modeling the relationship between a continuous dependent (**y**) variable and 
 one or more continuous independent (**x**) variables. Here you will be introduced to fitting the model and interpreting
