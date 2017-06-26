@@ -26,7 +26,7 @@ restore the correct dimensions.
 
 ## Part 1: Linear Algebra Practice:
 
-###Part 1.1
+### Part 1.1
 
 The stochastic matrix is central to the Markov process. It is a square matrix specifying that probabilities of going from one state to the other such that every column of the matrix sums to 1.
 
@@ -54,7 +54,7 @@ R (Residentially Used): 55%
    
 <br>
 
-###Part 1.2
+### Part 1.2
 
 This following question uses the `iris` dataset. Load the data in with the following code.
    
