@@ -37,7 +37,7 @@ is to provide insights on bike user activity and behavior to the products team.
    ![image](images/kde.png)
   
    Replot the distribution of daily user counts after binning them into weekday or weekend rides. Refit  
-   KDEs onto the weekday and weekend histograms. Here days greater than 5 are weekends.
+   KDEs onto the weekday and weekend histograms. Here days greater than 4 are weekends.
    
    ![image](images/weekdayweekend.png)
 
