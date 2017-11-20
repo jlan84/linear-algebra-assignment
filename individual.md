@@ -1,3 +1,5 @@
+# Linear Algebra Individual Assignment
+
 Include your answers to this morning's exercises in `individual.py`.
 
 This morning we will revisit some linear algebra using the numpy library in python. 
@@ -26,14 +28,13 @@ restore the correct dimensions.
 
 ## Part 1: Linear Algebra Practice:
 
-### Part 1.1
+### Markov Chains
 
-The stochastic matrix is central to the Markov process. It is a square matrix specifying that probabilities of going from one state to the other such that every column of the matrix sums to 1.
+A [Markov Chain](https://en.wikipedia.org/wiki/Markov_chain) is a simple model for a system that transitions between states, where there is some randomness involved in the transitions.  If, for example, the system has three states (on, off, and idle, for example), then the probabilities from transitioning from one state to another can be encoded as a three by three matrix of probabilities with some simple properties, this is called a *stochastic matrix*.
 
-The probability of entering a certain state depends only on the last state occupied and the stochastic matrix, not on any earlier states.
+The probability of entering a certain state depends only on the last state occupied and the transition probabilities in the stochastic matrix, not on the entire history of states.  This is called the *markov property*, and it makes Markov Chains particularly simple and appealing models.
 
-Suppose that the 2004 **state of land use** in a city of 60 mi^2 of built-up
-area is:
+Suppose that the 2004 **state of land use** in a city of 60 mi^2 of built-up area is:
 
 ```
 In 2004:
@@ -51,8 +52,11 @@ R (Residentially Used): 55%
       <img src="images/transition_matix_A.png">
    </div>
    
-   
 <br>
+
+2. Suppose that all of the land in the city starts as residential.  Use the transition matrix to plot how the usage of the other three land types evolves over time.
+
+3. Do the same as above for both an all industrial and an all commercial starting point.  How does the long term makeup of the city differ for different starting points?
 
 ### Part 1.2
 
@@ -60,16 +64,15 @@ This following question uses the `iris` dataset. Load the data in with the follo
    
 ```python
 from sklearn import datasets
-# The 1st column is sepal length and the 2nd column is sepal width
-sepalLength_sepalWidth = datasets.load_iris().data[:, :2]
+iris = datasets.load_iris()
 ```
   
-1. Make a scatter plot of sepal width vs sepal length
+1. Make a scatter plot of sepal width vs sepal length (you will have to explore the `iris` object to extract this information).
   
 2. Compute the mean vector (column-wise) of the data matrix. The `shape`
-   of the mean vector should be `(1, 2)`
+   of the mean vector should be `(1, 4)`
      
-   Plot the mean vector on the scatter plot in `1.` 
+   Plot the mean sepal width and sepal length vector on the scatter plot in `1.` 
 
    <div align="center">
     <img src="images/mean.png">
@@ -79,27 +82,26 @@ sepalLength_sepalWidth = datasets.load_iris().data[:, :2]
    between two **column vectors (not row vector)**. Your function should check
    if the vectors are column vectors and the shape of the two vectors are the same .
 
-4. Write a function (`cosine_sim`) to calculate the cosine similarity_between 
-   two **column vectors (not row vector)**.
+4. Write a function (`cosine_sim`) to calculate the cosine two **column vectors**.
    
 5. Write a function that would loop through all the data points in a given matrix and 
    calculate the given distance metric between each of the data point and the mean
-   vector. **A for loop is allowed here**
+   vector.
       
    **Input of the function:**
      - Data matrix as an ndarray
      - Function to compute distance metric (Euclidean / Cosine Similarity)
       
    **Output of the function:**
-     - An array shaped `(150, 1)`
+     - An array of distances.
       
    Use the function to compute Euclidean Distance and Cosine Similarity between each of
    the data points and the mean of the data points. You should be able to call the function
    in this manner:
 
    ```python
-   euclidean_dists = compute_dist(sepalLength_sepalWidth, euclidean_dist)
-   cosine_sims = compute_dist(sepalLength_sepalWidth, cosine_sim)
+   euclidean_dists = compute_dist(iris_data, euclidean_dist)
+   cosine_sims = compute_dist(iris_data, cosine_sim)
    ```
 6. Plot histograms of the euclidean distances and cosine similarities.
    
@@ -166,4 +168,3 @@ know how we will move on this Markov Chain.
    **Hint:** 
    - The stationary state is represented by the real form of the left (first) eigenvector
    - The left eigenvector obtained from `numpy.linalg.eig` has to be normalized
-           
