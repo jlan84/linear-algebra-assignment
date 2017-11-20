@@ -1,4 +1,4 @@
-Include your answer in `pair.py`
+# Introduction to Linear Regression Pair Assignment
 
 ## Part 1: Exploratory Data Analysis (EDA)
 
@@ -36,7 +36,7 @@ is to provide insights on bike user activity and behavior to the products team.
     
    ![image](images/kde.png)
   
-   Replot the distribution of daily user counts after binning them into weekday or weekend rides. Refit  
+   Re-plot the distribution of daily user counts after binning them into weekday or weekend rides. Refit  
    KDEs onto the weekday and weekend histograms. Here days greater than 4 are weekends.
    
    ![image](images/weekdayweekend.png)
@@ -69,11 +69,7 @@ is to provide insights on bike user activity and behavior to the products team.
    - Merge the station data with the trip data
    - Compute usage by counting the total users starting at a particular station divided by the dockcount
    - Normalize usage to range from `0`to `1`
-   - Using plotly, plot the latitude and longitude of the stations as scatter points, the usage will be indicated 
-     by the transparency and the size of the points
-  
-   ![scatter](images/plotly.png)
-
+   - Plot the latitude and longitude of the stations as scatter points. Encode usage information in the size of the points in the scatterplot.  
 
 ## Part 2: Intro to Linear Regression
 
@@ -96,7 +92,7 @@ the results before we dive more into the details of linear regression tomorrow.
    and a [boxplot](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.boxplot.html)
    to show the range of each of your variables.
    
-3. The beta coefficients of a linear regression model can be calculated by solving the normal equation.
+3. The beta coefficients of a linear regression model can be calculated by solving the **ormal equation**.
    Using numpy, write a function that solves the **normal equation** (below).
    As input your function should take a matrix of features (**x**) and
    a vector of target (**y**). You should return a vector of beta coefficients 
@@ -106,6 +102,9 @@ the results before we dive more into the details of linear regression tomorrow.
    <div align="center">
       <img height="30" src="images/normal_equation.png">
    </div>
+
+   Note that the matrix inverse in this equation **should not be taken literally**!  You should
+   use `np.linalg.solve` to solve the normal equation!
 
 3. Verify your results using statsmodels. Use the code below as a reference.
    ```python
