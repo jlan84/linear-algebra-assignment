@@ -6,7 +6,7 @@ This morning we will revisit some linear algebra using the numpy library in pyth
 
 **For the following exercises, use numpy vector/matrix operations. Do not use a for loop unless given explicit instructions**
 
-## Part 0: Important Numpy Notes:
+## Important Numpy Notes:
 
 In an numpy array, a **row vector** is defined as:
 
@@ -26,7 +26,7 @@ If the shape is missing a value, i.e. `(3,)` or  `(,3)`, use `np.newaxis` to
 restore the correct dimensions.
 
 
-## Part 1: Linear Algebra Practice:
+## Linear Algebra Practice:
 
 ### Markov Chains
 
@@ -58,7 +58,7 @@ R (Residentially Used): 55%
 
 3. Do the same as above for both an all industrial and an all commercial starting point.  How does the long term makeup of the city differ for different starting points?
 
-### Part 1.2
+### Iris
 
 This following question uses the `iris` dataset. Load the data in with the following code.
    
