@@ -92,7 +92,7 @@ the results before we dive more into the details of linear regression tomorrow.
    and a [boxplot](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.boxplot.html)
    to show the range of each of your variables.
    
-3. The beta coefficients of a linear regression model can be calculated by solving the **ormal equation**.
+3. The beta coefficients of a linear regression model can be calculated by solving the **normal equation**.
    Using numpy, write a function that solves the **normal equation** (below).
    As input your function should take a matrix of features (**x**) and
    a vector of target (**y**). You should return a vector of beta coefficients 
