@@ -103,9 +103,8 @@ the results before we dive more into the details of linear regression tomorrow.
       <img height="30" src="images/normal_equation.png">
    </div>
 
-   Note that the matrix inverse in this equation **should not be taken literally**!  You should
-   use `np.linalg.solve` to solve the normal equation!
-
+   Fun fact: you'll get a more precise answer if you use `np.linalg.solve` on `(X^T X) beta = X^T y` than if you invert `(X^T X)` using `np.linalg.inv`. See [here](https://stackoverflow.com/questions/31256252/why-does-numpy-linalg-solve-offer-more-precise-matrix-inversions-than-numpy-li) for more info.
+   
 3. Verify your results using statsmodels. Use the code below as a reference.
    ```python
    import statsmodels.api as sms
