@@ -15,5 +15,3 @@
 
 ### Handy Visualization Guide
 * [Chart Suggestions](http://extremepresentation.typepad.com/blog/files/choosing_a_good_chart.pdf)
-
-
