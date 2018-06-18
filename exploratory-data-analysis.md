@@ -77,15 +77,15 @@ Linear regression is an approach to modeling the relationship between a continuo
 one or more continuous independent (**x**) variables. Here you will be introduced to fitting the model and interpreting
 the results before we dive more into the details of linear regression tomorrow.
 
-1. We will be using the `prestige` data in `statsmodels`. `statsmodels` is the de facto library for performing regression
-   tasks in Python. Load the data with the follow code. **Remember to add a column of `1's` to the x matrix for the 
+1. We will be using the `prestige` dataset. Load the data with the following code. **Remember to add a column of `1's` to the x matrix for the 
    model to fit an intercept**.
 
    ```python 
-   import statsmodels.api as sm
-   prestige = sm.datasets.get_rdataset("Duncan", "car", cache=True).data
-   y = prestige['prestige']
-   x = prestige[['income', 'education']].astype(float)
+   import pandas as pd
+   url = 'https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/carData/Duncan.csv'
+   prestige = pd.read_csv(url)
+   y = prestige['prestige'].values
+   x = prestige[['income', 'education']].values
    ```
 
 2. Explore the data by making a [scatter_matrix](http://pandas.pydata.org/pandas-docs/version/0.15.0/visualization.html#visualization-scatter-matrix)
