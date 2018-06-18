@@ -1,10 +1,9 @@
 # Linear Algebra Individual Assignment
 
-Include your answers to this morning's exercises in `individual.py`.
-
 This morning we will revisit some linear algebra using the numpy library in python. 
 
-**For the following exercises, use numpy vector/matrix operations. Do not use a for loop unless given explicit instructions**
+**For the following exercises, use numpy vector/matrix operations. Do not use a for loop over a numpy array unless given explicit instructions to do so!**
+
 
 ## Important Numpy Notes:
 
@@ -13,16 +12,16 @@ In an numpy array, a **row vector** is defined as:
 ```python
 a = np.array([[1, 2, 3]])
 ```
-The shape of `a` is `(1, 3)`.
+The shape of `a` is `(1, 3)`.  There is one row and multiple columns.
 
 A **column vector** is defined as:
 ```python
 b = np.array([[1], [2], [3]])
 ```
-The shape of `b` is `(3, 1)`.
+The shape of `b` is `(3, 1)`.  There are three rows, and one column.
 
-Check the `shape` of all the vectors throughout the exercise.
-If the shape is missing a value, i.e. `(3,)` or  `(,3)`, use `np.newaxis` to
+Check the `shape` of all the vectors throughout the exercise.  If the shape is
+missing a value, i.e. `(3,)` or  `(,3)`, use `np.newaxis` or `np.reshape` to
 restore the correct dimensions.
 
 
@@ -30,9 +29,17 @@ restore the correct dimensions.
 
 ### Markov Chains
 
-A [Markov Chain](https://en.wikipedia.org/wiki/Markov_chain) is a simple model for a system that transitions between states, where there is some randomness involved in the transitions.  If, for example, the system has three states (on, off, and idle, for example), then the probabilities from transitioning from one state to another can be encoded as a three by three matrix of probabilities with some simple properties, this is called a *stochastic matrix*.
+A [Markov Chain](https://en.wikipedia.org/wiki/Markov_chain) is a simple model
+for a system that transitions between states, where there is some randomness
+involved in the transitions.  If, for example, the system has three states (on,
+off, and idle, for example), then the probabilities from transitioning from one
+state to another can be encoded as a three by three matrix of probabilities
+with some simple properties, this is called a *stochastic matrix*.
 
-The probability of entering a certain state depends only on the last state occupied and the transition probabilities in the stochastic matrix, not on the entire history of states.  This is called the *markov property*, and it makes Markov Chains particularly simple and appealing models.
+The probability of entering a certain state depends only on the last state
+occupied and the transition probabilities in the stochastic matrix, not on the
+entire history of states.  This is called the *markov property*, and it makes
+Markov Chains particularly simple and appealing models.
 
 Suppose that the 2004 **state of land use** in a city of 60 mi^2 of built-up area is:
 
@@ -54,20 +61,26 @@ R (Residentially Used): 55%
    
 <br>
 
-2. Suppose that all of the land in the city starts as residential.  Use the transition matrix to plot how the usage of the other three land types evolves over time.
+2. Suppose that all of the land in the city starts as residential.  Use the
+transition matrix to plot how the usage of the other three land types evolves
+over time.
 
-3. Do the same as above for both an all industrial and an all commercial starting point.  How does the long term makeup of the city differ for different starting points?
+3. Do the same as above for both an all industrial and an all commercial
+starting point.  How does the long term makeup of the city differ for different
+starting points?
 
 ### Iris
 
-This following question uses the `iris` dataset. Load the data in with the following code.
+This following question uses the `iris` dataset. Load the data in with the
+following code.
    
 ```python
 from sklearn import datasets
 iris = datasets.load_iris()
 ```
   
-1. Make a scatter plot of sepal width vs sepal length (you will have to explore the `iris` object to extract this information).
+1. Make a scatter plot of sepal width vs sepal length (you will have to explore
+the `iris` object to extract this information).
   
 2. Compute the mean vector (column-wise) of the data matrix. The `shape`
    of the mean vector should be `(1, 4)`
