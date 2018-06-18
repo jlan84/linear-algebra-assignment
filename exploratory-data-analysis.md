@@ -21,22 +21,22 @@ is to provide insights on bike user activity and behavior to the products team.
    - `hour` would only contain the hour component
    - [Hint to deal with datetime objects in pandas](http://stackoverflow.com/questions/25129144/pandas-return-hour-from-datetime-column-directly)
 
-2. Group the bike rides by `month` and count the number of users per month. Plot the number of users for each month. 
+2. Group the bike rides by `month` and count the number of trips per month. Plot the number of trips for each month. 
    What do you observe? Provide a likely explanation to your observation. Real life data can often be messy/incomplete
    and cursory EDA is often able to reveal that.
    
-3. Plot the daily user count from September to December. Mark the `mean` and `mean +/- 1.5 * Standard Deviation` as 
+3. Plot the daily trip count from September to December. Mark the `mean` and `mean +/- 1.5 * Standard Deviation` as 
    horizontal lines on the plot. This would help you identify the outliers in your data. Describe your observations. 
    
    ![image](images/timeseries.png)
 
-4. Plot the distribution of the daily user counts for all months as a histogram. Fit a 
+4. Plot the distribution of the daily trip counts for all months as a histogram. Fit a 
    [KDE](http://glowingpython.blogspot.com/2012/08/kernel-density-estimation-with-scipy.html) to the histogram.
    What is the distribution and explain why the distribution might be shaped as such. 
     
    ![image](images/kde.png)
   
-   Re-plot the distribution of daily user counts after binning them into weekday or weekend rides. Refit  
+   Re-plot the distribution of daily trip counts after binning them into weekday or weekend rides. Refit  
    KDEs onto the weekday and weekend histograms. Here days greater than 4 are weekends.
    
    ![image](images/weekdayweekend.png)
@@ -67,7 +67,7 @@ is to provide insights on bike user activity and behavior to the products team.
    The `lat` and `long` columns specify the latitude and longitude of the station. 
    
    - Merge the station data with the trip data
-   - Compute usage by counting the total users starting at a particular station divided by the dockcount
+   - Compute usage by counting the total trips starting at a particular station divided by the dockcount
    - Normalize usage to range from `0`to `1`
    - Plot the latitude and longitude of the stations as scatter points. Encode usage information in the size of the points in the scatterplot.  
 
@@ -92,7 +92,7 @@ the results before we dive more into the details of linear regression tomorrow.
    and a [boxplot](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.boxplot.html)
    to show the range of each of your variables.
    
-3. The beta coefficients of a linear regression model can be calculated by solving the **ormal equation**.
+3. The beta coefficients of a linear regression model can be calculated by solving the **normal equation**.
    Using numpy, write a function that solves the **normal equation** (below).
    As input your function should take a matrix of features (**x**) and
    a vector of target (**y**). You should return a vector of beta coefficients 
@@ -103,9 +103,8 @@ the results before we dive more into the details of linear regression tomorrow.
       <img height="30" src="images/normal_equation.png">
    </div>
 
-   Note that the matrix inverse in this equation **should not be taken literally**!  You should
-   use `np.linalg.solve` to solve the normal equation!
-
+   Fun fact: you'll get a more precise answer if you use `np.linalg.solve` on `(X^T X) beta = X^T y` than if you invert `(X^T X)` using `np.linalg.inv`. See [here](https://stackoverflow.com/questions/31256252/why-does-numpy-linalg-solve-offer-more-precise-matrix-inversions-than-numpy-li) for more info.
+   
 3. Verify your results using statsmodels. Use the code below as a reference.
    ```python
    import statsmodels.api as sms

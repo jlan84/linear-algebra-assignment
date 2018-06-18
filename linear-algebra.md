@@ -95,7 +95,7 @@ the `iris` object to extract this information).
    between two **column vectors (not row vector)**. Your function should check
    if the vectors are column vectors and the shape of the two vectors are the same .
 
-4. Write a function (`cosine_sim`) to calculate the cosine two **column vectors**.
+4. Write a function (`cosine_sim`) to calculate the cosine of the angle of separation between two **column vectors**.
    
 5. Write a function that would loop through all the data points in a given matrix and 
    calculate the given distance metric between each of the data point and the mean
