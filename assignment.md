@@ -1,4 +1,4 @@
-# Linear Algebra Individual Assignment
+# Linear Algebra Pair Assignment
 
 This morning we will revisit some linear algebra using the numpy library in python. 
 
