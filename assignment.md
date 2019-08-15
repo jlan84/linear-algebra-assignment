@@ -1,7 +1,5 @@
 # Linear Algebra Pair Assignment
 
-This morning we will revisit some linear algebra using the numpy library in python. 
-
 **For the following exercises, use numpy vector/matrix operations. Do not use a for loop over a numpy array unless given explicit instructions to do so!**
 
 
