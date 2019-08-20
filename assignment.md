@@ -114,7 +114,7 @@ the `iris` object to extract this information).
    euclidean_dists = compute_dist(iris_data, euclidean_dist)
    cosine_sims = compute_dist(iris_data, cosine_sim)
    ```
-6. Plot histograms of the euclidean distances and cosine similarities.
+6. Plot histograms of the euclidean distances and cosine similarities using only `sepal width` and `sepal length`.
    
    <div align="center">
     <img src="images/eucli_hist.png">
