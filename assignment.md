@@ -1,4 +1,4 @@
-# Linear Algebra Pair Assignment
+# Linear Algebra Assignment
 
 **For the following exercises, use numpy vector/matrix operations. Do not use a for loop over a numpy array unless given explicit instructions to do so!**
 
