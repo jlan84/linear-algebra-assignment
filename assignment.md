@@ -73,8 +73,8 @@ This following question uses the `iris` dataset. Load the data in with the
 following code.
    
 ```python
-from sklearn import datasets
-iris = datasets.load_iris()
+iris = pd.read_csv('data/iris.txt')
+data = iris[['SepalWidth', 'SepalLength']].as_matrix()
 ```
   
 1. Make a scatter plot of sepal width vs sepal length (you will have to explore
