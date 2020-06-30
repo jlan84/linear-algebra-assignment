@@ -1,7 +1,11 @@
-# Linear Algebra Assignment
+# Linear Algebra
+
+## Introduction
+
+In this assignment, you will practice matrix and vector operations
+with numpy.
 
 **For the following exercises, use numpy vector/matrix operations. Do not use a for loop over a numpy array unless given explicit instructions to do so!**
-
 
 ## Important Numpy Notes:
 
@@ -22,10 +26,9 @@ Check the `shape` of all the vectors throughout the exercise.  If the shape is
 missing a value, i.e. `(3,)` or  `(,3)`, use `np.newaxis` or `np.reshape` to
 restore the correct dimensions.
 
+## Basic
 
-## Linear Algebra Practice:
-
-### Markov Chains
+### Part 1: Markov Chains
 
 A [Markov Chain](https://en.wikipedia.org/wiki/Markov_chain) is a simple model
 for a system that transitions between states, where there is some randomness
@@ -67,7 +70,8 @@ over time.
 starting point.  How does the long term makeup of the city differ for different
 starting points?
 
-### Iris
+## Advanced
+### Part 2: Iris
 
 This following question uses the `iris` dataset. Load the data in with the
 following code.
@@ -125,7 +129,8 @@ the `iris` object to extract this information).
    </div>
 
 
-## Extra Credit: Implementing the PageRank Algorithm
+## Extra Credit
+### Part 3: Implementing the PageRank Algorithm
 
 The [Page Rank Algorithm](http://en.wikipedia.org/wiki/PageRank) is used by Google
 Search (in their early days) to rank websites in their search engine in terms 
