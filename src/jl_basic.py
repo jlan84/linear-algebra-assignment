@@ -28,10 +28,6 @@ def city_plot(m,v,t,ax, title=None):
     
     ax.set_title(title)
     
-    
-    
-
-
 
 
 if __name__ == "__main__":
@@ -57,14 +53,14 @@ if __name__ == "__main__":
     all_i = np.array([0,1,0])
     all_r = np.array([0,0,1])
 
-    fig, axs = plt.subplots(3,1, figsize=(4,8))
+    # fig, axs = plt.subplots(3,1, figsize=(4,8))
 
-    plts = [all_c, all_i, all_r]
-    titles = ['Commercial Start', 'Industrial Start', 'Residential Start']
+    # plts = [all_c, all_i, all_r]
+    # titles = ['Commercial Start', 'Industrial Start', 'Residential Start']
 
-    for plot, title, ax in zip(plts, titles, axs.flatten()):
-        city_plot(A, plot, 5, ax, title=title)
+    # for plot, title, ax in zip(plts, titles, axs.flatten()):
+    #     city_plot(A, plot, 5, ax, title=title)
     
-    plt.legend()
-    plt.tight_layout()
-    plt.show()
+    # plt.legend()
+    # plt.tight_layout()
+    # plt.show()
